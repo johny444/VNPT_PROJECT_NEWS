@@ -3,16 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashBoardComponent } from './dash-board/dash-board.component';
+import { NavComponent } from './component/template/nav/nav.component';
+import { FooterComponent } from './component/template/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ViewComponent } from './component/category/view/view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashBoardComponent
+    NavComponent,
+    FooterComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

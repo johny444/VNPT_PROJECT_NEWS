@@ -1,0 +1,85 @@
+<!-- Page content -->
+<div class="container" style="margin-top:46px">
+
+    <!-- The Band Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64">
+        <h2 class="w3-wide">Quản lý chuyên mục</h2>
+        <p class="w3-opacity"><i>We love music</i></p>
+
+        <div>
+            <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                    <input class="form-control mr-sm-2" type="search" placeholder="tìm kiếm bằng tên chuyên mục"
+                        aria-label="Search">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="col">
+                </div>
+                <div class="col">
+                    <button class="btn btn-outline-primary">thêm mới</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-flex justify-content-around">
+                    <div>
+                        <div>
+                            <h5>từ ngày tạo</h5>
+                        </div>
+                        <div><input type="date" class="form-control"></div>
+                    </div>
+                    <div>
+                        <div>
+                            <h5>đến ngày tạo</h5>
+                        </div>
+                        <div><input type="date" class="form-control"></div>
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-end align-items-center">
+                    <button class="btn btn-outline-info">đặt lại</button>
+                </div>
+                <div class="col d-flex justify-content-around align-items-center">
+                    <button class="btn btn-outline-success">áp dụng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- table -->
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tên chuyên mục</th>
+                <th scope="col">Mã chuyên mục</th>
+                <th scope="col">Ngày khởi tạo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-toggle="modal" data-target="#new" *ngFor="let item of categoryData">
+                <th scope="row">{{item.id}}</th>
+                <td>{{item.tenChuyenMuc}}</td>
+                <td>{{item.maChuyenMuc}}</td>
+                <td>{{item.ngayKhoiTao}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- modal -->
+    <div class="modal fade" id="new" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Thao tác</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Content -->
+</div>
