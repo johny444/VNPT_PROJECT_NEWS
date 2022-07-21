@@ -8,13 +8,15 @@ import { FooterComponent } from './component/template/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewComponent } from './component/category/view/view.component';
+import { HomeComponent } from './component/user/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     FooterComponent,
-    ViewComponent
+    ViewComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
