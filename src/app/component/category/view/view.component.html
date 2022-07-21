@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-6 d-flex align-items-center">
                     <input class="form-control mr-sm-2" type="search" placeholder="tìm kiếm bằng tên chuyên mục"
-                        aria-label="Search">
+                        aria-label="Search" [(ngModel)]="searchCategory.tenChuyenMuc" (keyup)="searchh4()" #search>
                     <i class="fa fa-search"></i>
                 </div>
                 <div class="col">
@@ -25,20 +25,23 @@
                         <div>
                             <h5>từ ngày tạo</h5>
                         </div>
-                        <div><input type="date" class="form-control"></div>
+                        <div><input type="date" class="form-control" [(ngModel)]="searchCategory.tuNgayKhoiTao"
+                                (keyup)="searchh4()" #tungay></div>
                     </div>
                     <div>
                         <div>
                             <h5>đến ngày tạo</h5>
                         </div>
-                        <div><input type="date" class="form-control"></div>
+                        <div><input type="date" class="form-control" [(ngModel)]="searchCategory.denNgayKhoiTao"
+                                (keyup)="searchh4()" #denngay></div>
                     </div>
                 </div>
-                <div class="col d-flex justify-content-end align-items-center">
-                    <button class="btn btn-outline-info">đặt lại</button>
+                <div class="col">
                 </div>
                 <div class="col d-flex justify-content-around align-items-center">
-                    <button class="btn btn-outline-success">áp dụng</button>
+                    <button class="btn btn-outline-success"
+                        (click)="search.value='';tungay.value=''; denngay.value=''; searchCategoryData = categoryData">đặt
+                        lại</button>
                 </div>
             </div>
         </div>
@@ -54,8 +57,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr data-toggle="modal" data-target="#new" *ngFor="let item of categoryData">
-                <th scope="row">{{item.id}}</th>
+            <tr data-toggle="modal" data-target="#new" *ngFor="let item of searchCategoryData, index as i">
+                <th scope="row">{{i+1}}</th>
                 <td>{{item.tenChuyenMuc}}</td>
                 <td>{{item.maChuyenMuc}}</td>
                 <td>{{item.ngayKhoiTao}}</td>
