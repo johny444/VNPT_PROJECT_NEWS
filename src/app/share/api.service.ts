@@ -8,20 +8,16 @@ import { map } from 'rxjs';
 export class ApiService {
 
   constructor(private  http:HttpClient) {}
-  postEmployee(data:any){
-    return this.http.post<any>("http://localhost:3003/posts",data)
-    .pipe(map((res:any)=>res))
-  }
   getCategory(){
     return this.http.get<any>("http://localhost:3003/category")
     .pipe(map((res:any)=>res))
   }
   putEmployee(data:any, id:number){
     return this.http.put<any>("http://localhost:3003/posts/"+id,data)
-    .pipe(map((res:any)=>res))  
+    .pipe(map((res:any)=>res))
   }
-  deleteEmployee(id:number){
-    return this.http.delete<any>("http://localhost:3003/posts/"+id)
+  deleteCategory(id:number){
+    return this.http.delete<any>("http://localhost:3003/category/"+id)
     .pipe(map((res:any)=>res))
   }
 
