@@ -8,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewComponent implements OnInit {
 
+  onCategory = {
+    id:0,
+    tenChuyenMuc: "",
+    maChuyenMuc: "",
+    ngayKhoiTao: ""
+  };
+
   searchCategory = {
     tenChuyenMuc: "",
     maChuyenMuc: "",
@@ -29,6 +36,13 @@ export class ViewComponent implements OnInit {
         this.searchCategoryData = res;
       })
   }
+  deleteCategoryDetail(idCategory:number) {
+    this.api.deleteCategory(idCategory)
+      .subscribe(res => {
+        this.getCategoryDetail();
+      })
+  }
+
 
   // searchh() {
   //   this.searchCategoryData = this.categoryData.filter((post: any) => {

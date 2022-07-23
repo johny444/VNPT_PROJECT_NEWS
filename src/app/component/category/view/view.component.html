@@ -16,7 +16,8 @@
                 <div class="col">
                 </div>
                 <div class="col">
-                    <button class="btn btn-outline-primary">thêm mới</button>
+                    <button [routerLink]="['/category/add']" routerLinkActive="router-link-active"
+                        class="btn btn-outline-primary">thêm mới</button>
                 </div>
             </div>
             <div class="row">
@@ -57,7 +58,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr data-toggle="modal" data-target="#new" *ngFor="let item of searchCategoryData, index as i">
+            <tr (click)="onCategory = item" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                *ngFor="let item of searchCategoryData, index as i">
                 <th scope="row">{{i+1}}</th>
                 <td>{{item.tenChuyenMuc}}</td>
                 <td>{{item.maChuyenMuc}}</td>
@@ -66,20 +68,44 @@
         </tbody>
     </table>
     <!-- modal -->
-    <div class="modal fade" id="new" role="dialog">
-        <div class="modal-dialog modal-sm">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Thao tác</h4>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h5 class="modal-title" id="staticBackdropLabel">Thao tác với {{onCategory.tenChuyenMuc}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <button class="btn btn-outline-primary">Sửa</button>
+                    <button class="btn btn-outline-success">Chi tiết</button>
+                    <button class="btn btn-outline-danger" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop2">xóa</button>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- xóa -->
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">bạn có muốn xóa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <button class="btn btn-outline-danger" (click)="deleteCategoryDetail(onCategory.id)"
+                        data-bs-dismiss="modal">xóa</button>
+                    <button class="btn btn-outline-primary" data-bs-dismiss="modal">không</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

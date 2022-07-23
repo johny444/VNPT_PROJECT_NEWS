@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewComponent } from './component/category/view/view.component';
 import { HomeComponent } from './component/user/home/home.component';
+import { AddComponent } from './component/category/add/add.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,14 +18,16 @@ import { HomeComponent } from './component/user/home/home.component';
     NavComponent,
     FooterComponent,
     ViewComponent,
-    HomeComponent
+    HomeComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
