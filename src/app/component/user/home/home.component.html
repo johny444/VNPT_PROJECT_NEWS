@@ -1,49 +1,133 @@
-<div class="container">
+<div class="container d-flex">
     <div>
-        
-        <div><h3>bài viết mới nhất</h3></div>
+        <div class="mb-5 mt-5">
+            <div>
+                <h3>bài viết mới nhất</h3>
+            </div>
+            <div>
+                <div class="card mb-3" style="max-width: 750px;" *ngFor="let item of newPostsData">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src={{item.anh}} class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="#">{{item.tieuDe}}</a></h5>
+                                <p class="card-text">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    Người đăng: <a href="#">{{item.nguoiDang}}</a>
+                                </p>
+                                <p class="card-text">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    Ngày đăng: {{item.ngayDang}}
+                                </p>
+                                <p class="card-text">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    Lượt xem: {{item.luotXem}}
+                                </p>
+                                <p class="card-text">
+                                    <i class="fa fa-tags" aria-hidden="true"></i>
+                                    chuyên mục: <a href="#">{{item.tenChuyenMuc}}</a>
+                                </p>
+                                <div class="d-flex flex-row-reverse mr-3">
+                                    <p class="card-text">
+                                        <small class="text-muted"><a href="#">Xem bài viết&gt;&gt;</a> </small>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-row-reverse ">
+                    <button class="btn btn-outline-primary">xem thêm, còn nhiều lắm</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="mb-5 mt-5">
+            <div>
+                <h3>Bài viết từ chuyên mục</h3>
+            </div>
+            <div>
+                <div class="card mb-3" style="width: 750px;" *ngFor="let item of postsFromCategory">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src={{item.anh}} class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="#">{{item.tieuDe}}</a></h5>
+                                <p class="card-text">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    Người đăng: <a href="#">{{item.nguoiDang}}</a>
+                                </p>
+                                <p class="card-text">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    Ngày đăng: {{item.ngayDang}}
+                                </p>
+                                <p class="card-text">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    Lượt xem: {{item.luotXem}}
+                                </p>
+                                <p class="card-text">
+                                    <i class="fa fa-tags" aria-hidden="true"></i>
+                                    chuyên mục: <a href="#">{{item.tenChuyenMuc}}</a>
+                                </p>
+                                <div class="d-flex flex-row-reverse mr-3">
+                                    <p class="card-text">
+                                        <small class="text-muted"><a href="#">Xem bài viết&gt;&gt;</a> </small>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-row-reverse">
+                    <button class="btn btn-outline-primary">xem thêm, còn nhiều lắm</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="mb-5 mt-5 ml-5">
         <div>
-            <div class="card mb-3" style="max-width: 800px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="http://dummyimage.com/107x100.png/ff4444/ffffff" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <div>
+                <h3>bài viết phổ biến nhất</h3>
+            </div>
+            <div>
+                <div class="card mb-3" style="max-width: 750px;" *ngFor="let item of eyesPosts">
+                    <div class="row no-gutters">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="#">{{item.tieuDe}}</a></h5>
+                                <p class="card-text">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    Người đăng: <a href="#">{{item.nguoiDang}}</a>
+                                </p>
+                                <p class="card-text">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    Lượt xem: {{item.luotXem}}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card mb-3" style="max-width: 800px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="http://dummyimage.com/107x100.png/ff4444/ffffff" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
+
+        </div>
+        <div>
+            <div>
+                <h3>chuyên đề</h3>
             </div>
-            <div class="card mb-3" style="max-width: 800px;">
+            <div class="card mb-3" style="max-width: 750px;">
                 <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="http://dummyimage.com/107x100.png/ff4444/ffffff" class="card-img" alt="...">
-                    </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <p class="card-text" *ngFor="let item of randomCategory">
+                                <a href="#">{{item}}</a>
+                            </p>
                         </div>
                     </div>
                 </div>

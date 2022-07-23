@@ -11,6 +11,8 @@ import { ViewComponent } from './component/category/view/view.component';
 import { HomeComponent } from './component/user/home/home.component';
 import { RouterModule } from '@angular/router';
 import { ViewArticleComponent } from './component/article/viewArticle/viewArticle.component';
+import { AddComponent } from './component/category/add/add.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import { ViewArticleComponent } from './component/article/viewArticle/viewArticl
     FooterComponent,
     ViewComponent,
     HomeComponent,
-    ViewArticleComponent
-  ],
+    ViewArticleComponent,
+    AddComponent
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,6 +31,8 @@ import { ViewArticleComponent } from './component/article/viewArticle/viewArticl
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule
+,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
