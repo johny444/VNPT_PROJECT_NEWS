@@ -13,6 +13,8 @@ import { RouterModule } from '@angular/router';
 import { ViewArticleComponent } from './component/article/viewArticle/viewArticle.component';
 import { AddComponent } from './component/category/add/add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthorPostComponent } from './component/user/author-post/author-post.component';
+import { PostsByCategoryComponent } from './component/user/posts-by-category/posts-by-category.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ViewComponent,
     HomeComponent,
     ViewArticleComponent,
-    AddComponent
-],
+    AddComponent,
+    AuthorPostComponent,
+    PostsByCategoryComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,7 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule
-,
+    ,
     BrowserAnimationsModule
   ],
   providers: [],
