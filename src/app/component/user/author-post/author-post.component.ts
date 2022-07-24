@@ -1,40 +1,44 @@
-import { ApiService } from './../../../share/api.service';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/share/api.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-author-post',
+  templateUrl: './author-post.component.html',
+  styleUrls: ['./author-post.component.css']
 })
-export class HomeComponent implements OnInit {
+export class AuthorPostComponent implements OnInit {
 
   // dữ liệu toàn bộ các bài viết
   postsData!: any;
-  // dữ liệu 3 bài mới nhất
+  // dữ liệu 5 bài mới nhất của tác giả
   newPostsData!: any;
-  // 3 bài bất kì
-  postsFromCategory!: any;
   // 3 bài viết nhiều lượt xem
   eyesPosts:any[]=[]
   // 3 chuyên mục mới nhất
   randomCategory!:any;
+  // tên tác giả
+  authorName!: any;
 
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
     this.getPostsDetail();
     this.getCategoryDetail();
+    this.api.authorPost.subscribe((val:any) =>{
+      this.authorName  = val;
+    })
   }
 
   getPostsDetail() {
     this.api.getPosts()
       .subscribe(res => {
         this.postsData = res;
-        this.newPostsData = this.postsData.slice(-3);
-        this.postsFromCategory = this.postsData.slice(0,3);
+        this.newPostsData = this.postsData.filter((a:any)=>a.nguoiDang == this.authorName)
+        this.newPostsData = this.newPostsData.slice(-5);
         this.eyesPosts = this.postsData.sort((a:any,b:any)=>a.luotXem-b.luotXem);
         this.eyesPosts = this.eyesPosts.slice(-3);
       })
+    
   }
   getCategoryDetail() {
     this.api.getCategory()
@@ -42,7 +46,5 @@ export class HomeComponent implements OnInit {
         this.randomCategory = res.map((x:any)=>x.tenChuyenMuc).slice(-3);
       })
   }
-  authorPost(nguoiDang:any){
-    this.api.authorPost.next(nguoiDang);
-  }
+
 }

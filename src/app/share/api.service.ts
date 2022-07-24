@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+
+  public authorPost = new BehaviorSubject<string>("");
 
   constructor(private  http:HttpClient) {}
   getCategory(){
@@ -14,10 +16,6 @@ export class ApiService {
   }
   getPosts(){
     return this.http.get<any>("http://localhost:3003/posts")
-    .pipe(map((res:any)=>res))
-  }
-  putEmployee(data:any, id:number){
-    return this.http.put<any>("http://localhost:3003/posts/"+id,data)
     .pipe(map((res:any)=>res))
   }
   deleteCategory(id:number){

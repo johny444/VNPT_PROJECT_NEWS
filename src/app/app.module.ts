@@ -11,6 +11,8 @@ import { ViewComponent } from './component/category/view/view.component';
 import { HomeComponent } from './component/user/home/home.component';
 import { AddComponent } from './component/category/add/add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthorPostComponent } from './component/user/author-post/author-post.component';
+import { PostsByCategoryComponent } from './component/user/posts-by-category/posts-by-category.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     ViewComponent,
     HomeComponent,
-    AddComponent
+    AddComponent,
+    AuthorPostComponent,
+    PostsByCategoryComponent
   ],
   imports: [
     BrowserModule,
