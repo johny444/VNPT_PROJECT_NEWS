@@ -4,6 +4,7 @@ import { AddComponent } from './component/category/add/add.component';
 import { ViewComponent } from './component/category/view/view.component';
 import { AuthorPostComponent } from './component/user/author-post/author-post.component';
 import { HomeComponent } from './component/user/home/home.component';
+import { PostsByCategoryComponent } from './component/user/posts-by-category/posts-by-category.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
@@ -11,8 +12,8 @@ const routes: Routes = [
   {path:'home', component: HomeComponent},
   // bài viết tác giả
   {path:'authorpost', component: AuthorPostComponent},
-  // ?
-  {path:'posts', component: ViewComponent},
+  // bài viết theo chuyên mục
+  {path:'postsbycategory', component: PostsByCategoryComponent},
   // trang danh sách chuyên mục
   {path:'category', component: ViewComponent},
   // trang danh sách tin bài

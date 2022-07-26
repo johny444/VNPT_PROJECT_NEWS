@@ -9,7 +9,7 @@ body {
 
 }
 
-#container {
+.container1 {
     box-shadow: 0 15px 30px 1px grey;
     background: rgba(255, 255, 255, 0.90);
     text-align: center;
@@ -33,7 +33,7 @@ body {
     display: inline-block;
 }
 
-#container .product-details h2 {
+.container1 .product-details h2 {
     font-family: 'Bebas Neue', cursive;
     display: inline-block;
     position: relative;
@@ -43,7 +43,7 @@ body {
 
 }
 
-#container .product-details h2:before {
+.container1 .product-details h2:before {
     position: absolute;
     content: '';
     right: 0%;
@@ -74,7 +74,7 @@ body {
 }
 
 
-#container .product-details>p {
+.container1 .product-details>p {
     font-family: 'EB Garamond', serif;
     text-align: center;
     font-size: 18px;
@@ -168,7 +168,7 @@ body {
     display: inline-block;
 }
 
-#container img {
+.container1 img {
     width: 100%;
     height: 100%;
 }
@@ -202,8 +202,11 @@ body {
     transition: 0.3s ease;
 }
 
-.info ul li a {
+a{
     text-decoration: none;
+}
+
+.info ul li a {
     color: #eee;
 }
 
@@ -217,4 +220,96 @@ body {
 
 .product-image:hover img {
     transform: scale(1.2, 1.2);
+}
+.card-text2{
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    position: relative;
+    font-size: 20px;
+    color: #344055;
+    margin: 0;
+}
+.info2 {
+    /* background: rgba(27, 26, 26, 0.9); */
+    font-family: 'Bree Serif', serif;
+    /* transition: all 0.3s ease-out; */
+    /* transform: translateX(-100%); */
+    position: absolute;
+    line-height: 1.8;
+    text-align: left;
+    font-size: 120%;
+    /* cursor: no-drop; */
+    color: rgb(28, 25, 25);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding-top:65px;
+    
+}
+.info2 ul li {
+    transition: 0.3s ease;
+    list-style-type: none;
+   
+}
+
+.info2 ul li a {
+    text-decoration: none;
+    color: rgb(28, 25, 25);
+    
+}
+
+.info2 ul li:hover {
+    transform: translateX(50px) scale(1.3);
+}
+
+/* Widgetchuyenmuc */
+
+
+
+.product-image:hover .widgetchuyenmuc {
+    transform: translateX(0);
+}
+
+.widgetchuyenmuc ul li {
+    transition: 0.3s ease;
+    list-style-type: none;
+}
+
+.widgetchuyenmuc ul li a {
+    text-decoration: none;
+    color: #eee;
+}
+
+.widgetchuyenmuc ul li:hover {
+    transform: translateX(50px) scale(1.3);
+}
+
+.widgetchuyenmuc {
+    font-family: 'Bree Serif', serif;
+    position: absolute;
+    line-height: 1.8;
+    text-align: left;
+    font-size: 120%;
+    color: rgb(28, 25, 25);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    
+}
+.infowidgetchuyenmuc2 ul li {
+    transition: 0.3s ease;
+    list-style-type: none;
+   
+}
+
+.widgetchuyenmuc ul li a {
+    text-decoration: none;
+    color: rgb(28, 25, 25);
+    
+}
+
+.widgetchuyenmuc ul li:hover {
+    transform: translateX(50px) scale(1.3);
 }

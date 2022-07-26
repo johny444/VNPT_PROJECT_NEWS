@@ -47,4 +47,7 @@ export class AuthorPostComponent implements OnInit {
       })
   }
 
+  authorPost(nguoiDang:any){
+    this.api.authorPost.next(nguoiDang);
+  }
 }

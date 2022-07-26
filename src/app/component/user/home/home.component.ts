@@ -12,12 +12,14 @@ export class HomeComponent implements OnInit {
   postsData!: any;
   // dữ liệu 3 bài mới nhất
   newPostsData!: any;
-  // 3 bài bất kì
+  // 3 bài của chuyên mục bất kì
   postsFromCategory!: any;
+  // tên của chuyên mục bất kỳ đó
+  randCategory!: any;
   // 3 bài viết nhiều lượt xem
-  eyesPosts:any[]=[]
+  eyesPosts: any[] = []
   // 3 chuyên mục mới nhất
-  randomCategory!:any;
+  randomCategory!: any;
 
   constructor(private api: ApiService) { }
 
@@ -31,18 +33,23 @@ export class HomeComponent implements OnInit {
       .subscribe(res => {
         this.postsData = res;
         this.newPostsData = this.postsData.slice(-3);
-        this.postsFromCategory = this.postsData.slice(0,3);
-        this.eyesPosts = this.postsData.sort((a:any,b:any)=>a.luotXem-b.luotXem);
+        this.randCategory = this.postsData[Math.floor(Math.random() * this.postsData.length)];
+        this.postsFromCategory = this.postsData.filter(
+          (a: any) => a.tenChuyenMuc == this.randCategory.tenChuyenMuc).slice(-3);
+        this.eyesPosts = this.postsData.sort((a: any, b: any) => a.luotXem - b.luotXem);
         this.eyesPosts = this.eyesPosts.slice(-3);
       })
   }
   getCategoryDetail() {
     this.api.getCategory()
       .subscribe(res => {
-        this.randomCategory = res.map((x:any)=>x.tenChuyenMuc).slice(-3);
+        this.randomCategory = res.map((x: any) => x.tenChuyenMuc).slice(-3);
       })
   }
-  authorPost(nguoiDang:any){
+  authorPost(nguoiDang: any) {
     this.api.authorPost.next(nguoiDang);
+  }
+  postByCategory(tenChuyenMuc:any){
+    this.api.postByCategory.next(tenChuyenMuc);
   }
 }
