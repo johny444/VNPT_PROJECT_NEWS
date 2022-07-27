@@ -13,6 +13,11 @@ import { AddComponent } from './component/category/add/add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthorPostComponent } from './component/user/author-post/author-post.component';
 import { PostsByCategoryComponent } from './component/user/posts-by-category/posts-by-category.component';
+import { ContentComponent } from './component/user/content/content.component';
+import { AllPostComponent } from './component/user/all-post/all-post.component';
+
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +28,9 @@ import { PostsByCategoryComponent } from './component/user/posts-by-category/pos
     HomeComponent,
     AddComponent,
     AuthorPostComponent,
-    PostsByCategoryComponent
+    PostsByCategoryComponent,
+    ContentComponent,
+    AllPostComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,8 @@ import { PostsByCategoryComponent } from './component/user/posts-by-category/pos
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

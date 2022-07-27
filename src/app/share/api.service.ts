@@ -6,6 +6,8 @@ import { BehaviorSubject, map } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
+  // content component
+  public idContent = new BehaviorSubject<number>(0);
   // post by category component
   public postByCategory = new BehaviorSubject<string>("");
   // author-post component
