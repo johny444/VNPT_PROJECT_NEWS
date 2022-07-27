@@ -1,13 +1,13 @@
 import { INewPost } from './../../template/interface';
-import { ApiService } from './../../../share/api.service';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/share/api.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-content',
+  templateUrl: './content.component.html',
+  styleUrls: ['./content.component.css']
 })
-export class HomeComponent implements OnInit {
+export class ContentComponent implements OnInit {
 
   // dữ liệu toàn bộ các bài viết
   postsData!: any;
@@ -16,7 +16,19 @@ export class HomeComponent implements OnInit {
   // 3 bài của chuyên mục bất kì
   postsFromCategory!: any;
   // chuyên mục bất kỳ đó
-  randCategory: INewPost = {
+  randCategory!: any;
+  // 3 bài viết nhiều lượt xem
+  eyesPosts: any[] = []
+  // danh sách chuyên mục
+  category!: any;
+  // test
+  test!: any;
+  test2: any[] = [];
+
+  // id bài viết
+  idcon:number = 0;
+  // bài viết
+  conten: INewPost = {
     id: 0,
     tieuDe: "",
     nguoiDang: "",
@@ -37,18 +49,15 @@ export class HomeComponent implements OnInit {
     noiDung: "",
     anh: ""
   };
-  // 3 bài viết nhiều lượt xem
-  eyesPosts: any[] = []
-  // danh sách chuyên mục
-  category!: any;
-  // test
-  test!: any;
-  test2: any[] = [];
 
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
+    this.api.idContent.subscribe((val:any) =>{
+      this.idcon  = val;
+    })
     this.getPostsDetail();
+    
   }
 
   getPostsDetail() {
@@ -56,6 +65,10 @@ export class HomeComponent implements OnInit {
       .subscribe(res => {
         this.postsData = res;
 
+        this.conten = this.postsData.find(
+          (a: any) =>a.id == this.idcon
+        );
+        console.log(this.conten);
         this.test = this.postsData.map((a: any) => a.chuyenMuc);
         this.test.forEach((e: any) => {
           this.test2 = [...this.test2, ...e];
@@ -64,12 +77,11 @@ export class HomeComponent implements OnInit {
 
         this.newPostsData = this.postsData.slice(-3);
         this.randCategory = this.postsData[Math.floor(Math.random() * this.postsData.length)];
-        this.postsFromCategory = this.postsData.filter((a: any) => 
-        a.chuyenMuc[0].tenChuyenMuc == this.randCategory.chuyenMuc[0].tenChuyenMuc
-        )
-        .slice(-3);
+        this.postsFromCategory = this.postsData.filter(
+          (a: any) => a.chuyenMuc[0].tenChuyenMuc == this.randCategory.chuyenMuc[0].tenChuyenMuc).slice(-3);
         this.eyesPosts = this.postsData.sort((a: any, b: any) => a.luotXem - b.luotXem);
         this.eyesPosts = this.eyesPosts.slice(-3);
+        
       })
   }
   authorPost(nguoiDang: any) {
@@ -78,7 +90,5 @@ export class HomeComponent implements OnInit {
   postByCategory(tenChuyenMuc: any) {
     this.api.postByCategory.next(tenChuyenMuc);
   }
-  idContent(idContent: any) {
-    this.api.idContent.next(idContent);
-  }
+
 }

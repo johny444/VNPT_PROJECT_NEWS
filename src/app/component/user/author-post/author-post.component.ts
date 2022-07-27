@@ -18,10 +18,15 @@ export class AuthorPostComponent implements OnInit {
   randomCategory!:any;
   // tên tác giả
   authorName!: any;
+  p:number= 0;
+  idcon:number = 0;
 
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
+    this.api.idContent.subscribe((val:any) =>{
+      this.idcon  = val;
+    })
     this.getPostsDetail();
     this.getCategoryDetail();
     this.api.authorPost.subscribe((val:any) =>{
@@ -34,7 +39,6 @@ export class AuthorPostComponent implements OnInit {
       .subscribe(res => {
         this.postsData = res;
         this.newPostsData = this.postsData.filter((a:any)=>a.nguoiDang == this.authorName)
-        this.newPostsData = this.newPostsData.slice(-5);
         this.eyesPosts = this.postsData.sort((a:any,b:any)=>a.luotXem-b.luotXem);
         this.eyesPosts = this.eyesPosts.slice(-3);
       })

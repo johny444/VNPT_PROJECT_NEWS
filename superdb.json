@@ -6,8 +6,20 @@
             "nguoiDang": "Dell Hammelberg",
             "ngayDang": "6/10/2022",
             "luotXem": 800,
-            "maChuyenMuc": "50436-3145",
-            "tenChuyenMuc": "Sub-Ex",
+            "chuyenMuc": [
+                {
+                    "id": 1,
+                    "tenChuyenMuc": "Sub-Ex",
+                    "maChuyenMuc": "55-165-6071"
+                },
+                {
+                    "id": 3,
+                    "tenChuyenMuc": "Toughjoyfax",
+                    "maChuyenMuc": "91-496-6933"
+                }
+            ],
+            "noiDung":"wwwwwqeqqeqewqeqweqewqewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+            ,
             "anh": "https://images.unsplash.com/photo-1606830733744-0ad778449672?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNocmlzdG1hcyUyMHRyZWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -16,8 +28,14 @@
             "nguoiDang": "Dell Hammelberg",
             "ngayDang": "1/14/2022",
             "luotXem": 278,
-            "maChuyenMuc": "64058-343",
-            "tenChuyenMuc": "Sub-Ex",
+            "chuyenMuc": [
+                {
+                    "id": 1,
+                    "tenChuyenMuc": "Sub-Ex",
+                    "maChuyenMuc": "55-165-6071"
+                }
+            ],
+            "noiDung":"wwwwwqeqqeqewqeqweqewqewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
             "anh": "https://images.unsplash.com/photo-1606830733744-0ad778449672?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNocmlzdG1hcyUyMHRyZWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -26,8 +44,14 @@
             "nguoiDang": "Dell Hammelberg",
             "ngayDang": "12/8/2021",
             "luotXem": 288,
-            "maChuyenMuc": "0409-2988",
-            "tenChuyenMuc": "Sub-Ex",
+            "chuyenMuc": [
+                {
+                    "id": 1,
+                    "tenChuyenMuc": "Sub-Ex",
+                    "maChuyenMuc": "55-165-6071"
+                }
+            ],
+            "noiDung":"wwwwwqeqqeqewqeqweqewqewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
             "anh": "https://images.unsplash.com/photo-1606830733744-0ad778449672?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNocmlzdG1hcyUyMHRyZWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -36,8 +60,14 @@
             "nguoiDang": "Aldo Grocutt",
             "ngayDang": "2/1/2022",
             "luotXem": 374,
-            "maChuyenMuc": "53329-138",
-            "tenChuyenMuc": "Solarbreeze",
+            "chuyenMuc": [
+                {
+                    "id": 2,
+                    "tenChuyenMuc": "Solarbreeze",
+                    "maChuyenMuc": "68-154-9912"
+                }
+            ],
+            "noiDung":"wwwwwqeqqeqewqeqweqewqewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
             "anh": "https://images.unsplash.com/photo-1606830733744-0ad778449672?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNocmlzdG1hcyUyMHRyZWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -46,8 +76,14 @@
             "nguoiDang": "Aldo Grocutt",
             "ngayDang": "8/25/2021",
             "luotXem": 109,
-            "maChuyenMuc": "66944-001",
-            "tenChuyenMuc": "Solarbreeze",
+            "chuyenMuc": [
+                {
+                    "id": 2,
+                    "tenChuyenMuc": "Solarbreeze",
+                    "maChuyenMuc": "68-154-9912"
+                }
+            ],
+            "noiDung":"wwwwwqeqqeqewqeqweqewqewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
             "anh": "https://images.unsplash.com/photo-1606830733744-0ad778449672?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNocmlzdG1hcyUyMHRyZWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -56,8 +92,14 @@
             "nguoiDang": "Aldo Grocutt",
             "ngayDang": "8/10/2021",
             "luotXem": 368,
-            "maChuyenMuc": "63550-810",
-            "tenChuyenMuc": "Solarbreeze",
+            "chuyenMuc": [
+                {
+                    "id": 2,
+                    "tenChuyenMuc": "Solarbreeze",
+                    "maChuyenMuc": "68-154-9912"
+                }
+            ],
+            "noiDung":"wwwwwqeqqeqewqeqweqewqewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
             "anh": "https://images.unsplash.com/photo-1606830733744-0ad778449672?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNocmlzdG1hcyUyMHRyZWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -66,8 +108,14 @@
             "nguoiDang": "Aldo Grocutt",
             "ngayDang": "3/7/2022",
             "luotXem": 125,
-            "maChuyenMuc": "15127-835",
-            "tenChuyenMuc": "Solarbreeze",
+            "chuyenMuc": [
+                {
+                    "id": 2,
+                    "tenChuyenMuc": "Solarbreeze",
+                    "maChuyenMuc": "68-154-9912"
+                }
+            ],
+            "noiDung":"wwwwwqeqqeqewqeqweqewqewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
             "anh": "https://images.unsplash.com/photo-1606830733744-0ad778449672?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNocmlzdG1hcyUyMHRyZWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -76,8 +124,19 @@
             "nguoiDang": "Aldo Grocutt",
             "ngayDang": "6/8/2022",
             "luotXem": 661,
-            "maChuyenMuc": "36987-2283",
-            "tenChuyenMuc": "Solarbreeze",
+            "chuyenMuc": [
+                {
+                    "id": 2,
+                    "tenChuyenMuc": "Solarbreeze",
+                    "maChuyenMuc": "68-154-9912"
+                },
+                {
+                    "id": 5,
+                    "tenChuyenMuc": "Home Ing",
+                    "maChuyenMuc": "82-702-8538"
+                }
+            ],
+            "noiDung":"wwwwwqeqqeqewqeqweqewqewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.wwwwwwwwwwwwwwwwwwwwweeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrrrrrr",
             "anh": "https://images.unsplash.com/photo-1606830733744-0ad778449672?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNocmlzdG1hcyUyMHRyZWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -86,8 +145,19 @@
             "nguoiDang": "Aldo Grocutt",
             "ngayDang": "9/3/2021",
             "luotXem": 828,
-            "maChuyenMuc": "0179-0122",
-            "tenChuyenMuc": "Solarbreeze",
+            "chuyenMuc": [
+                {
+                    "id": 2,
+                    "tenChuyenMuc": "Solarbreeze",
+                    "maChuyenMuc": "68-154-9912"
+                },
+                {
+                    "id": 5,
+                    "tenChuyenMuc": "Home Ing",
+                    "maChuyenMuc": "82-702-8538"
+                }
+            ],
+            "noiDung":"wwwwwqeqqeqewqeqweqewqewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
             "anh": "https://images.unsplash.com/photo-1606830733744-0ad778449672?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNocmlzdG1hcyUyMHRyZWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -96,8 +166,19 @@
             "nguoiDang": "Dell Hammelberg",
             "ngayDang": "4/5/2022",
             "luotXem": 933,
-            "maChuyenMuc": "55316-067",
-            "tenChuyenMuc": "Solarbreeze",
+            "chuyenMuc": [
+                {
+                    "id": 2,
+                    "tenChuyenMuc": "Solarbreeze",
+                    "maChuyenMuc": "68-154-9912"
+                },
+                {
+                    "id": 4,
+                    "tenChuyenMuc": "Flowdesk",
+                    "maChuyenMuc": "99-617-4168"
+                }
+            ],
+            "noiDung":"wwwwwqeqqeqewqeqweqewqewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
             "anh": "https://images.unsplash.com/photo-1606830733744-0ad778449672?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNocmlzdG1hcyUyMHRyZWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         }
     ],
