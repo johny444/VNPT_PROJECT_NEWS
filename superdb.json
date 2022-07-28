@@ -1,4 +1,29 @@
-{
+{   "Users": [
+    {
+      "username": "johny44",
+      "email": "johny44@gmail.com",
+      "password": "johny44QWE!@#",
+      "id": 3
+    },
+    {
+      "username": "johny22",
+      "email": "johny22@gmail.com",
+      "password": "johny44QWE!@#",
+      "id": 4
+    },
+    {
+      "username": "johny23",
+      "email": "johny22@gmail.com",
+      "password": "johny44QWE!@#",
+      "id": 5
+    },
+    {
+      "username": "johny24",
+      "email": "johny22@gmail.com",
+      "password": "johny44QWE!@#",
+      "id": 6
+    }
+  ],
     "posts": [
         {
             "id": 1,

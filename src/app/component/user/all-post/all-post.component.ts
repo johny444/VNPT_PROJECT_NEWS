@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/share/api.service';
-import { INewPost } from '../../template/interface';
+import { INewPost } from 'src/app/share/interface/newpost';
 
 @Component({
   selector: 'app-all-post',

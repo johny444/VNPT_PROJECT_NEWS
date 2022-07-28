@@ -1,6 +1,6 @@
-import { INewPost } from './../../template/interface';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/share/api.service';
+import { INewPost } from 'src/app/share/interface/newpost';
 
 @Component({
   selector: 'app-content',

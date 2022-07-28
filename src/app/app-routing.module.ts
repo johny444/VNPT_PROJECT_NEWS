@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddComponent } from './component/category/add/add.component';
 import { ViewComponent } from './component/category/view/view.component';
+import { LoginComponent } from './component/signin/login/login.component';
+import { RegisterComponent } from './component/signin/register/register.component';
+import { ResetpasswordComponent } from './component/signin/resetpassword/resetpassword.component';
 import { AllPostComponent } from './component/user/all-post/all-post.component';
 import { AuthorPostComponent } from './component/user/author-post/author-post.component';
 import { ContentComponent } from './component/user/content/content.component';
@@ -25,7 +28,16 @@ const routes: Routes = [
   // trang danh sách tin bài
   {path:'article', component: ViewComponent},
   // trang thêm chuyên mục
-  {path:'category/add', component: AddComponent}
+  {path:'category/add', component: AddComponent},
+  {
+    path: 'register', component: RegisterComponent
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'reset', component: ResetpasswordComponent
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
