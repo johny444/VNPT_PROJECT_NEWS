@@ -18,8 +18,11 @@ import { PostsByCategoryComponent } from './component/user/posts-by-category/pos
 import { ContentComponent } from './component/user/content/content.component';
 import { AllPostComponent } from './component/user/all-post/all-post.component';
 
-import { NgxPaginationModule } from 'ngx-pagination';
 
+import {NgxPaginationModule} from 'ngx-pagination';
+import { LoginComponent } from './component/signin/login/login.component';
+import { RegisterComponent } from './component/signin/register/register.component';
+import { ResetpasswordComponent } from './component/signin/resetpassword/resetpassword.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AuthorPostComponent,
     PostsByCategoryComponent,
     ContentComponent,
-    AllPostComponent
+    AllPostComponent,
+    LoginComponent,
+    RegisterComponent,
+    ResetpasswordComponent
   ],
   imports: [
     BrowserModule,

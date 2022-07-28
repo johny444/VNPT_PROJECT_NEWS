@@ -1,6 +1,6 @@
-import { INewPost } from './../../template/interface';
 import { ApiService } from './../../../share/api.service';
 import { Component, OnInit } from '@angular/core';
+import { INewPost } from 'src/app/share/interface/newpost';
 
 @Component({
   selector: 'app-home',
