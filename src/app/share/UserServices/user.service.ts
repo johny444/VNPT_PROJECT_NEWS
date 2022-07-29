@@ -17,11 +17,11 @@ export class UserService {
   currentdropdown = this.dropdown.asObservable()
   // newww
   _accounter = new BehaviorSubject<User>({
-    id:0,
-    username:"",
-    email:"",
-    password:""
-});
+    id: 0,
+    username: "",
+    email: "",
+    password: ""
+  });
   current_accounter = this._accounter.asObservable();
 
   constructor(private http: HttpClient, private router: Router) { }
