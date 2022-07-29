@@ -28,12 +28,13 @@
 
     <i *ngIf="_dropdown" class="bi bi-person-circle" style='font-size:36px'></i>
     <span> </span>
+    <!-- newww -->
     <div class="btn-group" *ngIf="_dropdown">
         <button type="button" class="btn btn-outline dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            {{name}}
+            {{accounter.username}}
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
-            <li><button class="dropdown-item" type="button">Manange Account</button></li>
+            <li><button class="dropdown-item" type="button" routerLink="/accountinformation">Manange Account</button></li>
             <li><button class="dropdown-item" type="button" (click)="Checklogout()" *ngIf="islogout"
                     routerLink="/home">Logout</button></li>
         </ul>
