@@ -23,6 +23,13 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { LoginComponent } from './component/signin/login/login.component';
 import { RegisterComponent } from './component/signin/register/register.component';
 import { ResetpasswordComponent } from './component/signin/resetpassword/resetpassword.component';
+import { AccountInformationComponent } from './component/signin/account-information/account-information.component';
+import { ViewArticleComponent } from './component/article/view-article/view-article.component';
+import { AddArticleComponent } from './component/article/add-article/add-article.component';
+import { ChangeArticleComponent } from './component/article/change-article/change-article.component';
+import { DetailArticleComponent } from './component/article/detail-article/detail-article.component';
+import { ChangeComponent } from './component/category/change/change.component';
+import { DetailComponent } from './component/category/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +46,14 @@ import { ResetpasswordComponent } from './component/signin/resetpassword/resetpa
     AllPostComponent,
     LoginComponent,
     RegisterComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    AccountInformationComponent,
+    ViewArticleComponent,
+    AddArticleComponent,
+    ChangeArticleComponent,
+    DetailArticleComponent,
+    ChangeComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

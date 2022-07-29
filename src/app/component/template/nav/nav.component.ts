@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/share/interface/user';
 import { UserService } from 'src/app/share/UserServices/user.service';
 
 @Component({
@@ -11,6 +12,12 @@ export class NavComponent implements OnInit {
   islogin!:boolean
   islogout!:boolean
   _dropdown!:boolean
+  accounter:User = {
+    id:0,
+    username:"",
+    email:"",
+    password:""
+  }
   name!:string
   constructor( private Check:UserService) { }
 
@@ -27,8 +34,8 @@ export class NavComponent implements OnInit {
       this._dropdown=res
       console.log("res logout",this._dropdown)
     })
-    this.Check.current_name.subscribe(res=>{
-      this.name=res
+    this.Check.current_accounter.subscribe(res=>{
+      this.accounter = res;
     })
 
   }
@@ -40,5 +47,6 @@ export class NavComponent implements OnInit {
     this.Check.dropdown.next(false)
     this.Check.loggedIn.next(true)
   }
+
 
 }
