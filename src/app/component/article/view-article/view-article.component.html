@@ -16,7 +16,7 @@
                 <div class="col">
                 </div>
                 <div class="col">
-                    <button [routerLink]="['/Post/add']" routerLinkActive="router-link-active"
+                    <button [routerLink]="['/article/add']" routerLinkActive="router-link-active"
                         class="btn btn-outline-primary">thêm mới</button>
                 </div>
             </div>
@@ -82,9 +82,9 @@
                 </div>
                 <div class="modal-body d-flex justify-content-center">
                     <button class="btn btn-outline-primary" data-bs-dismiss="modal"
-                        routerLink="/Post/change/{{onPost.id}}">Sửa</button>
+                        routerLink="/article/change/{{onPost.id}}">Sửa</button>
                     <button class="btn btn-outline-success" data-bs-dismiss="modal"
-                        routerLink="/Post/detail/{{onPost.id}}">Chi tiết</button>
+                        routerLink="/article/detail/{{onPost.id}}">Chi tiết</button>
                     <button class="btn btn-outline-danger" data-bs-dismiss="modal" data-bs-toggle="modal"
                         data-bs-target="#staticBackdrop2">xóa</button>
                 </div>

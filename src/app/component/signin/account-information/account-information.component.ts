@@ -29,8 +29,16 @@ export class AccountInformationComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.service.current_accounter.subscribe(res=>{
-      this.accounter = res;
+    this.service.current_accounter.subscribe(res => {
+      this.accounter = res
+      console.log("account type from nav",typeof this.accounter)
+      if(typeof res=="string"){
+          this.accounter=JSON.parse(res)
+      }
+      else{
+        return
+      }
+      // console.log("current_accounter",typeof res)
     })
     this.accounterForm = this.fb.group({
       email: ["", [Validators.required, Validators.email]]

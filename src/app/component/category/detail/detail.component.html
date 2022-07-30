@@ -24,8 +24,8 @@
 
         <fieldset disabled>
 
-            <div class="container2">
-                <div class="box">
+            <div class="row">
+                <div class="box col">
                     <label for="exampleFormControlInput1" class="form-label">Tên chuyên mục <span
                             style="color:red">*</span></label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="tenChuyenMuc"
@@ -35,7 +35,7 @@
                         This field must required
                     </span>
                 </div>
-                <div class="box">
+                <div class="box col">
                     <label for="exampleFormControlInput1" class="form-label">Mã chuyên mục <span
                             style="color:red">*</span></label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="maChuyenMuc"
@@ -45,7 +45,7 @@
                         This field must required
                     </span>
                 </div>
-                <div class="box">
+                <div class="box col">
                     <label for="exampleFormControlInput1" class="form-label">Chuyên mục cha</label>
                     <select class="form-select">
                         <option hidden selected>{{chuyenmucByID.chuyenMucCha}}</option>
@@ -54,14 +54,13 @@
                     </select>
                 </div>
             </div>
-            <div class="boxfoot">
-                <div>
-                    <label for="exampleFormControlTextarea1" class="form-label">Mô tả</label>
-                    <textarea class="form-control" style="height:20rem ;width: 20rem;margin: 0;" formControlName="moTa"
-                        [(ngModel)]="chuyenmucByID.moTa"></textarea>
+            <div class="row box ">
+                <label for="exampleFormControlTextarea1" class="form-label">Mô tả</label>
+                <textarea class="form-control" rows="9" formControlName="moTa"
+                    [(ngModel)]="chuyenmucByID.moTa"></textarea>
 
-                </div>
             </div>
+
         </fieldset>
 
 
