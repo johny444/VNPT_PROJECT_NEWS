@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewsService } from 'src/app/share/News/news.service';
 import { Router } from '@angular/router';
+import { ArticleService } from 'src/app/share/tinBai/article.service';
 
 @Component({
   selector: 'app-add-article',
@@ -12,55 +13,49 @@ export class AddArticleComponent implements OnInit {
 
   form!: FormGroup
   submitted = false;
-  chuyenmuc:any={
+  tinbai:any={
     id:1,
-    tenChuyenMuc:"",
-    maChuyenMuc:"",
+    tentinbai:"",
+    matinbai:"",
     moTa:"",
-    chuyenMucCha:""
+    tinbaiCha:""
   }
-  chuyenMucCha!:any
-  constructor(private fb: FormBuilder,private api:NewsService,public router:Router) { }
+  tinbaiCha!:any
+  constructor(private fb: FormBuilder,private api:ArticleService,public router:Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      tenChuyenMuc:["",
+      tentinbai:["",
         Validators.compose([
           Validators.required,
         ])
       ],
-      maChuyenMuc:['',
+      matinbai:['',
         Validators.compose([
           Validators.required
-        ])
-    
+        ])  
       ],
       ngayKhoiTao:[''],
       moTa:[''],
-      chuyenMucCha:['']
+      tinbaiCha:['']
 
    })
-   this.getCM()
-
-    
+   this.getCM()    
   }
-
-
-
   get FormControl(){
     return this.form.controls
   }
   getCM(){
-    this.api.getChuyenmuc().subscribe(res=>{
-          this.chuyenMucCha=res
+    this.api.gettinbai().subscribe(res=>{
+          this.tinbaiCha=res
     })
   }
   createCM(){
     if(this.form.valid){
-      this.api.createChuyenmuc(this.form.value).subscribe(res=>{
+      this.api.createtinbai(this.form.value).subscribe(res=>{
         alert('Tạo Danh Mục Thành Công');
         this.form.reset()
-        this.router.navigate(["category"])
+        this.router.navigate(["article"])
       })
     }
 }

@@ -15,6 +15,7 @@ export class CustomvalidationService {
       }
       const regex = new RegExp('^(?=.*?[A-Z])(?=.*?[!@#$%^&*])(?=.*?[0-9]).{8,}$');
       const valid = regex.test(control.value);
+      
       return valid ? null! : { invalidPassword: true };
     };
   }
@@ -25,6 +26,7 @@ export class CustomvalidationService {
       }
       const regex = new RegExp('^(?=.*?[a-zA-Z])(?=.*?[0-9]).{6,}$');
       const valid = regex.test(control.value);
+      
       return valid ? null! : { invalidUsername: true };
     };
   }

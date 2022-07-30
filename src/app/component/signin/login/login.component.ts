@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     private service:UserService,private customValidator:CustomvalidationService) {
 
   }
-
+ 
   ngOnInit(): void {
     this.LoginForm = this.fb.group({
       username: ["",
@@ -28,6 +28,9 @@ export class LoginComponent implements OnInit {
       ],
       password: ['', Validators.compose([Validators.required, this.customValidator.patternValidator()])],
     })
+    // this.service.current_accounter.subscribe(res=>{
+    //   console.log("from login",res)
+    // })
   }
   onSubmit(): void {
     if(this.LoginForm){
