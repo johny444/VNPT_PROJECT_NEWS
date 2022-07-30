@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddArticleComponent } from './component/article/add-article/add-article.component';
+import { ChangeArticleComponent } from './component/article/change-article/change-article.component';
+import { DetailArticleComponent } from './component/article/detail-article/detail-article.component';
+import { ViewArticleComponent } from './component/article/view-article/view-article.component';
 import { AddComponent } from './component/category/add/add.component';
+import { ChangeComponent } from './component/category/change/change.component';
+import { DetailComponent } from './component/category/detail/detail.component';
 import { ViewComponent } from './component/category/view/view.component';
 import { AccountInformationComponent } from './component/signin/account-information/account-information.component';
 import { LoginComponent } from './component/signin/login/login.component';
@@ -31,17 +37,17 @@ const routes: Routes = [
   // trang thêm chuyên mục
   {path:'category/add', component: AddComponent},
   // trang sửa chuyên mục
-  {path:'category/change', component: AddComponent},
+  {path:'category/change/:id', component: ChangeComponent},
   // trang chi tiết chuyên mục
-  {path:'category/detail', component: AddComponent},
+  {path:'category/detail/:id', component: DetailComponent},
   // trang danh sách tin bài
-  {path:'article', component: ViewComponent},
+  {path:'article', component: ViewArticleComponent},
   // trang thêm tin bài
-  {path:'article/add', component: AddComponent},
+  {path:'article/add', component: AddArticleComponent},
   // trang sửa tin bài
-  {path:'article/change', component: AddComponent},
+  {path:'article/change', component: ChangeArticleComponent},
   // trang chi tiết tin bài
-  {path:'article/detail', component: AddComponent},
+  {path:'article/detail', component: DetailArticleComponent},
   
   // phần tài khoản quản trị
   {

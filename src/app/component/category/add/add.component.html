@@ -1,27 +1,61 @@
 <div class="container">
-    <div>
-      <!-- nút lưu, xóa và tiêu đề -->
-      <div>Thêm chuyen mục</div>
-      <div>
-        <button class="btn btn-primary">lưu</button>
+  <form action="" [formGroup]="form" (ngSubmit)="createCM()">
+
+      <nav class="navbar navbar-light bg-white">
+          <div class="container-fluid">
+              <a class="navbar-brand">
+                  <strong>Thêm chuyên mục</strong>
+              </a>
+              <div class="d-flex">
+
+                  <button class="btn btn-outline-danger" type="submit" routerLink="/category">Hủy</button>
+                  <span style="margin:0 1rem"> </span>
+                  <button class="btn btn-outline-success" type="submit">Lưu</button>
+              </div>
+          </div>
+      </nav>
+
+      <div class="container2">
+
+          <div class="box">
+              <label for="exampleFormControlInput1" class="form-label">Tên chuyên mục <span
+                      style="color:red">*</span></label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="tenChuyenMuc">
+              <span class="text-danger" *ngIf="(FormControl['tenChuyenMuc'].touched || submitted)
+              && FormControl['tenChuyenMuc'].errors?.['required']">
+                  This field must required
+              </span>
+          </div>
+          <div class="box">
+              <label for="exampleFormControlInput1" class="form-label">Mã chuyên mục <span
+                      style="color:red">*</span></label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="maChuyenMuc">
+              <span class="text-danger" *ngIf="(FormControl['maChuyenMuc'].touched || submitted)
+              && FormControl['maChuyenMuc'].errors?.['required']">
+                  This field must required
+              </span>
+          </div>
+          <div class="box">
+              <label for="exampleFormControlInput1" class="form-label">Chuyên mục cha</label>
+              <select type="email" class="form-control" id="exampleFormControlInput1" formControlName="chuyenMucCha">
+                  <option selected></option>
+                  <option *ngFor="let item of chuyenMucCha">{{item.tenChuyenMuc}}</option>
+
+              </select>
+          </div>
       </div>
-    </div>
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Mã Chuyên mục cha</label>
-        <select class="form-select" aria-label="Default select example">
-          <option hidden selected>Open this select menu</option>
-          <option value={{item}} *ngFor="let item of categoryCodeData">{{item}}</option>
-        </select>
+      <div class="boxfoot">
+          <div>
+              <label for="exampleFormControlTextarea1" class="form-label">Mô tả</label>
+              <textarea class="form-control" style="height:20rem ;width: 20rem;margin: 0;"
+                  formControlName="moTa"></textarea>
+
+          </div>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
+
+
+  </form>
+
+
+
+</div>

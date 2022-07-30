@@ -24,14 +24,14 @@
                 <div class="col-6 d-flex justify-content-around">
                     <div>
                         <div>
-                            <h5>từ ngày tạo</h5>
+                            <h3>từ ngày tạo</h3>
                         </div>
                         <div><input type="date" class="form-control" [(ngModel)]="searchCategory.tuNgayKhoiTao"
                                 (keyup)="searchh4()" #tungay></div>
                     </div>
                     <div>
                         <div>
-                            <h5>đến ngày tạo</h5>
+                            <h3>đến ngày tạo</h3>
                         </div>
                         <div><input type="date" class="form-control" [(ngModel)]="searchCategory.denNgayKhoiTao"
                                 (keyup)="searchh4()" #denngay></div>
@@ -58,8 +58,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr (click)="onCategory = item" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                *ngFor="let item of searchCategoryData, index as i">
+            <tr (click)="onCategory = item; c()" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                *ngFor="let item of searchCategoryData| paginate: { itemsPerPage: 5, currentPage: p }, index as i">
                 <th scope="row">{{i+1}}</th>
                 <td>{{item.tenChuyenMuc}}</td>
                 <td>{{item.maChuyenMuc}}</td>
@@ -67,19 +67,25 @@
             </tr>
         </tbody>
     </table>
+    <div class="d-flex justify-content-center">
+        <pagination-controls previousLabel="Trước" nextLabel="Sau" (pageChange)="p = $event">
+        </pagination-controls>
+    </div>
     <!-- modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Thao tác với {{onCategory.tenChuyenMuc}}</h5>
+                    <h3 class="modal-title" id="staticBackdropLabel">Thao tác với {{onCategory.tenChuyenMuc}}</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <button class="btn btn-outline-primary">Sửa</button>
-                    <button class="btn btn-outline-success">Chi tiết</button>
-                    <button class="btn btn-outline-danger" data-bs-toggle="modal"
+                <div class="modal-body d-flex justify-content-center">
+                    <button class="btn btn-outline-primary" data-bs-dismiss="modal"
+                        routerLink="/category/change/{{onCategory.id}}">Sửa</button>
+                    <button class="btn btn-outline-success" data-bs-dismiss="modal"
+                        routerLink="/category/detail/{{onCategory.id}}">Chi tiết</button>
+                    <button class="btn btn-outline-danger" data-bs-dismiss="modal" data-bs-toggle="modal"
                         data-bs-target="#staticBackdrop2">xóa</button>
                 </div>
                 <div class="modal-footer">
@@ -96,10 +102,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">bạn có muốn xóa</h5>
+                    <h3 class="modal-title" id="staticBackdropLabel">bạn có muốn xóa</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body d-flex justify-content-center">
                     <button class="btn btn-outline-danger" (click)="deleteCategoryDetail(onCategory.id)"
                         data-bs-dismiss="modal">xóa</button>
                     <button class="btn btn-outline-primary" data-bs-dismiss="modal">không</button>
