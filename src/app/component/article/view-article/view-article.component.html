@@ -62,7 +62,7 @@
                 *ngFor="let item of searchPostData| paginate: { itemsPerPage: 5, currentPage: p }, index as i">
                 <th scope="row">{{i+1}}</th>
                 <td>{{item.tieuDe}}</td>
-                <td><span *ngFor="let i of item.chuyenMuc"> {{i.tenChuyenMuc}} </span></td>
+                <td><span *ngFor="let i of item.chuyenMuc"> {{i.tenChuyenMuc}}</span></td>
                 <td>{{item.ngayDang}}</td>
             </tr>
         </tbody>
