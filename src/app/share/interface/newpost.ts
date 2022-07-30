@@ -13,5 +13,4 @@ export interface INewPost {
     chuyenMuc: MyType[],
     noiDung: string,
     anh: string
-
 }

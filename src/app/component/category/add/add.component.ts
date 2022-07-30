@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../share/api.service';
-import { map } from 'rxjs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NewsService } from 'src/app/share/News/news.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -9,21 +10,59 @@ import { map } from 'rxjs';
 })
 export class AddComponent implements OnInit {
 
-  categoryData!: any;
-  categoryCodeData!: any;
-  constructor(private api: ApiService) { }
+  form!: FormGroup
+  submitted = false;
+  chuyenmuc:any={
+    id:1,
+    tenChuyenMuc:"",
+    maChuyenMuc:"",
+    moTa:"",
+    chuyenMucCha:""
+  }
+  chuyenMucCha!:any
+  constructor(private fb: FormBuilder,private api:NewsService,public router:Router) { }
 
   ngOnInit(): void {
-    this.getCategoryDetail();
+    this.form = this.fb.group({
+      tenChuyenMuc:["",
+        Validators.compose([
+          Validators.required,
+        ])
+      ],
+      maChuyenMuc:['',
+        Validators.compose([
+          Validators.required
+        ])
+    
+      ],
+      ngayKhoiTao:[''],
+      moTa:[''],
+      chuyenMucCha:['']
 
+   })
+   this.getCM()
+
+    
   }
-  getCategoryDetail() {
-    this.api.getCategory()
-      .subscribe(res => {
-        this.categoryData = res;
-        this.categoryCodeData = this.categoryData.map((x:any)=>x.maChuyenMuc);
-        console.log(this.categoryCodeData)
+
+
+
+  get FormControl(){
+    return this.form.controls
+  }
+  getCM(){
+    this.api.getChuyenmuc().subscribe(res=>{
+          this.chuyenMucCha=res
+    })
+  }
+  createCM(){
+    if(this.form.valid){
+      this.api.createChuyenmuc(this.form.value).subscribe(res=>{
+        alert('Tạo Danh Mục Thành Công');
+        this.form.reset()
+        this.router.navigate(["category"])
       })
-  }
+    }
+}
 
 }

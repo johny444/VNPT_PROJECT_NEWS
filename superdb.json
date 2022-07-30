@@ -2,7 +2,7 @@
   "Users": [
     {
       "username": "johny44",
-      "email": "johny49@gmail.com",
+      "email": "johny50@gmail.com",
       "password": "johny44QWE!@#",
       "id": 3
     },
@@ -212,61 +212,81 @@
       "id": 1,
       "tenChuyenMuc": "Sub-Ex",
       "maChuyenMuc": "55-165-6071",
-      "ngayKhoiTao": "2021-10-23"
+      "ngayKhoiTao": "2021-10-23",
+      "chuyenMucCha": "Toughjoyfax",
+      "moTa":"1"
     },
     {
       "id": 2,
       "tenChuyenMuc": "Solarbreeze",
       "maChuyenMuc": "68-154-9912",
-      "ngayKhoiTao": "2021-10-22"
+      "ngayKhoiTao": "2021-10-22",
+      "chuyenMucCha": "",
+      "moTa":"222"
     },
     {
       "id": 3,
       "tenChuyenMuc": "Toughjoyfax",
       "maChuyenMuc": "91-496-6933",
-      "ngayKhoiTao": "2021-11-23"
+      "ngayKhoiTao": "2021-11-23",
+      "chuyenMucCha": "",
+      "moTa":"33"
     },
     {
       "id": 4,
       "tenChuyenMuc": "Flowdesk",
       "maChuyenMuc": "99-617-4168",
-      "ngayKhoiTao": "2021-12-23"
+      "ngayKhoiTao": "2021-12-23",
+      "chuyenMucCha": "Toughjoyfax",
+      "moTa":"123"
     },
     {
       "id": 5,
       "tenChuyenMuc": "Home Ing",
       "maChuyenMuc": "82-702-8538",
-      "ngayKhoiTao": "2022-10-23"
+      "ngayKhoiTao": "2022-10-23",
+      "chuyenMucCha": "",
+      "moTa":"2342"
     },
     {
       "id": 6,
       "tenChuyenMuc": "Fixflex",
       "maChuyenMuc": "18-416-2977",
-      "ngayKhoiTao": "2022-10-26"
+      "ngayKhoiTao": "2022-10-26",
+      "chuyenMucCha": "Subin",
+      "moTa":"qưeeqwe"
     },
     {
       "id": 7,
       "tenChuyenMuc": "Subin",
       "maChuyenMuc": "81-078-3570",
-      "ngayKhoiTao": "2021-10-27"
+      "ngayKhoiTao": "2021-10-27",
+      "chuyenMucCha": "Toughjoyfax",
+      "moTa":"qưeqwe"
     },
     {
       "id": 8,
       "tenChuyenMuc": "Bigtax",
       "maChuyenMuc": "03-505-5579",
-      "ngayKhoiTao": "2021-10-28"
+      "ngayKhoiTao": "2021-10-28",
+      "chuyenMucCha": "Subin",
+      "moTa":"qưeqwe"
     },
     {
       "id": 9,
       "tenChuyenMuc": "Viva",
       "maChuyenMuc": "01-959-2926",
-      "ngayKhoiTao": "2021-10-29"
+      "ngayKhoiTao": "2021-10-29",
+      "chuyenMucCha": "Subin",
+      "moTa":"ai mà biết được"
     },
     {
       "id": 10,
       "tenChuyenMuc": "Alphazap",
       "maChuyenMuc": "78-497-0095",
-      "ngayKhoiTao": "2021-11-30"
+      "ngayKhoiTao": "2021-11-30",
+      "chuyenMucCha": "Toughjoyfax",
+      "moTa":" còn cái nịt"
     }
   ]
 }

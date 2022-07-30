@@ -26,4 +26,8 @@ export class ApiService {
     return this.http.delete<any>("http://localhost:3003/category/"+id)
     .pipe(map((res:any)=>res))
   }
+  deletePosts(id:number){
+    return this.http.delete<any>("http://localhost:3003/posts/"+id)
+    .pipe(map((res:any)=>res))
+  }
 }
