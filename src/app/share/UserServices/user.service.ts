@@ -106,12 +106,12 @@ export class UserService {
     })
   }
 
-  updatepassword(id: number, data: any) {
+  updatepassword(id: string, data: any) {
     return this.http.put("http://localhost:3003/Users/" + id, data)
 
   }
   // newww
-  putUser(data: any, id: number) {
+  putUser(data: any, id: string) {
     return this.http.put<any>("http://localhost:3003/Users/" + id, data)
       .pipe(map((res: any) => res))
   }

@@ -24,7 +24,6 @@ import { LoginComponent } from './component/signin/login/login.component';
 import { RegisterComponent } from './component/signin/register/register.component';
 import { ResetpasswordComponent } from './component/signin/password/resetpassword/resetpassword.component';
 import { AccountInformationComponent } from './component/signin/account-information/account-information.component';
-import { ViewArticleComponent } from './component/article/view-article/view-article.component';
 import { AddArticleComponent } from './component/article/add-article/add-article.component';
 import { ChangeArticleComponent } from './component/article/change-article/change-article.component';
 import { DetailArticleComponent } from './component/article/detail-article/detail-article.component';
@@ -32,6 +31,7 @@ import { ChangeComponent } from './component/category/change/change.component';
 import { DetailComponent } from './component/category/detail/detail.component';
 import { ConfirmOTPComponent } from './component/signin/password/confirm-otp/confirm-otp.component';
 import { ForgetPWComponent } from './component/signin/password/forget-pw/forget-pw.component';
+import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 
 @NgModule({
   declarations: [
@@ -67,7 +67,8 @@ import { ForgetPWComponent } from './component/signin/password/forget-pw/forget-
     HttpClientModule,
     RouterModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
