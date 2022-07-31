@@ -4,6 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NewsService } from 'src/app/share/News/news.service';
 import { ArticleService } from 'src/app/share/tinBai/article.service';
 
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { UserService } from 'src/app/share/UserServices/user.service';
+
 @Component({
   selector: 'app-detail-article',
   templateUrl: './detail-article.component.html',
@@ -17,24 +20,33 @@ export class DetailArticleComponent implements OnInit {
 
   tinbai!: any
   id = this.actRoute.snapshot.params['id'];
-  constructor(private fb: FormBuilder, private api: ArticleService,
-    public actRoute: ActivatedRoute, private router: Router) { }
+
+  // multi select
+  dropdownList: any = [];
+  dropdownSettings: IDropdownSettings = {};
+  selectedItems: any = [];
+  chuyenMuc!: any;
+  chuyenMucDuocChon: any = [];
+
+  constructor(private fb: FormBuilder, private api: ArticleService, public router: Router,
+    private cmuc: NewsService, private Check: UserService, public actRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      tentinbai: ["",
+      tieuDe: ["",
         Validators.compose([
           Validators.required,
         ])
       ],
-      matinbai: ['',
+      anh: ['',
         Validators.compose([
           Validators.required
         ])
 
       ],
       ngayKhoiTao: [''],
-      moTa: [''],
+      noiDung: [''],
+      chuyenMuc: ['']
 
     })
 
@@ -47,32 +59,42 @@ export class DetailArticleComponent implements OnInit {
 
 
   }
+  onItemSelect(item: any) {
+    this.chuyenMucDuocChon.push(this.chuyenMuc.find((a: any) => a.id == item.id));
+  }
+  onSelectAll(items: any) {
+    this.chuyenMucDuocChon.push(items);
+  }
   get FormControl() {
     return this.form.controls
   }
   getCMByID() {
     this.api.gettinbaiById(this.id).subscribe((data: {}) => {
       this.tinbaiByID = data
-      console.log(this.tinbaiByID)
+      console.log(this.tinbaiByID);
+      this.selectedItems = this.tinbaiByID.chuyenMuc;
+      this.chuyenMucDuocChon = this.tinbaiByID.chuyenMuc;
     })
   }
   getCM() {
-    this.api.gettinbai().subscribe(res => {
-      this.tinbai = res
+    this.cmuc.getChuyenmuc().subscribe(res => {
+      this.chuyenMuc = res;
+      this.dropdownList = this.chuyenMuc;
 
     })
+    // multi select
+
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'id',
+      textField: 'tenChuyenMuc',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      itemsShowLimit: 3,
+      allowSearchFilter: true
+    };
   }
-  // UpdateCM(){
-
-
-  //     this.api.updatetinbai(this.id,this.form.value).subscribe(res=>{
-  //       alert("Cập Nhật Thành Công")
-  //       this.router.navigate(['/article'])
-
-  //     }
-  //     )
-
-  // }
+  
   DeleteCM(ID: any) {
 
     if (window.confirm("“Bạn có chắc chắn muốn xoá tin bài này?")) {

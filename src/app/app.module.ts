@@ -30,6 +30,7 @@ import { DetailComponent } from './component/category/detail/detail.component';
 import { ConfirmOTPComponent } from './component/signin/password/confirm-otp/confirm-otp.component';
 import { ForgetPWComponent } from './component/signin/password/forget-pw/forget-pw.component';
 
+import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { ForgetPWComponent } from './component/signin/password/forget-pw/forget-
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

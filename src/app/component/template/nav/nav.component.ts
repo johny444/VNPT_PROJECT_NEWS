@@ -10,7 +10,7 @@ import { UserService } from 'src/app/share/UserServices/user.service';
 })
 export class NavComponent implements OnInit {
   accounter: User = {
-    id: 0,
+    id: "0",
     username: "",
     email: "",
     password: ""
@@ -39,14 +39,12 @@ export class NavComponent implements OnInit {
     })
     this.Check.current_accounter.subscribe(res => {
       this.accounter = res
-      console.log("account type from nav",typeof this.accounter)
       if(typeof res=="string"){
           this.accounter=JSON.parse(res)
       }
       else{
         return
       }
-      // console.log("current_accounter",typeof res)
     })
 
   }

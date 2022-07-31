@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ViewComponent implements OnInit {
 
   onCategory = {
-    id: 0,
+    id: "0",
     tenChuyenMuc: "",
     maChuyenMuc: "",
     ngayKhoiTao: ""
@@ -39,7 +39,7 @@ export class ViewComponent implements OnInit {
         this.searchCategoryData = res;
       })
   }
-  deleteCategoryDetail(idCategory: number) {
+  deleteCategoryDetail(idCategory: string) {
     this.api.deleteCategory(idCategory)
       .subscribe(res => {
         this.getCategoryDetail();
@@ -84,8 +84,5 @@ export class ViewComponent implements OnInit {
       }
     }
     return resultArr
-  }
-  c(){
-    console.log(this.onCategory);
   }
 }

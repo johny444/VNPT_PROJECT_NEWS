@@ -58,7 +58,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr (click)="onPost = item; c()" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            <tr (click)="onPost = item" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                 *ngFor="let item of searchPostData| paginate: { itemsPerPage: 5, currentPage: p }, index as i">
                 <th scope="row">{{i+1}}</th>
                 <td>{{item.tieuDe}}</td>

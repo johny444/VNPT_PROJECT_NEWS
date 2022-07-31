@@ -29,19 +29,19 @@ export class ContentComponent implements OnInit {
   idcon:number = 0;
   // bài viết
   conten: INewPost = {
-    id: 0,
+    id: "0",
     tieuDe: "",
     nguoiDang: "",
     ngayDang: "",
     luotXem: 0,
     chuyenMuc: [
       {
-        id: 0,
+        id: "0",
         tenChuyenMuc: "0",
         maChuyenMuc: "0"
       },
       {
-        id: 0,
+        id: "0",
         tenChuyenMuc: "0",
         maChuyenMuc: "0"
       }

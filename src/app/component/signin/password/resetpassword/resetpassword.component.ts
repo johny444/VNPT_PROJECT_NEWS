@@ -16,7 +16,7 @@ export class ResetpasswordComponent implements OnInit {
   submitted = false;
 
   accounter: User = {
-    id: 0,
+    id: "0",
     username: "",
     email: "",
     password: ""

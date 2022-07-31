@@ -1,11 +1,11 @@
 type MyType = {
-    id: number,
+    id: string,
     tenChuyenMuc: string,
     maChuyenMuc: string
 }
 
 export interface INewPost {
-    id: number,
+    id: string,
     tieuDe: string,
     nguoiDang: string,
     ngayDang: string,

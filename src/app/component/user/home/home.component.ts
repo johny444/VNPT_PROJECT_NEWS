@@ -17,19 +17,19 @@ export class HomeComponent implements OnInit {
   postsFromCategory!: any;
   // chuyên mục bất kỳ đó
   randCategory: INewPost = {
-    id: 0,
+    id: "0",
     tieuDe: "",
     nguoiDang: "",
     ngayDang: "",
     luotXem: 0,
     chuyenMuc: [
       {
-        id: 0,
+        id: "0",
         tenChuyenMuc: "0",
         maChuyenMuc: "0"
       },
       {
-        id: 0,
+        id: "0",
         tenChuyenMuc: "0",
         maChuyenMuc: "0"
       }

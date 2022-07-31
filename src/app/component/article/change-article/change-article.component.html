@@ -18,37 +18,45 @@
         <div class="row">
 
             <div class="box col">
-                <label for="exampleFormControlInput1" class="form-label">Tên tin bài <span
-                        style="color:red">*</span></label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="tentinbai"
-                    [(ngModel)]="tinbaiByID.tentinbai">
-                <span class="text-danger" *ngIf="(FormControl['tentinbai'].touched || submitted)
-                && FormControl['tentinbai'].errors?.['required']">
+                <label for="exampleFormControlInput1" class="form-label">Tiêu đề<span style="color:red">*</span></label>
+                <input type="text" class="form-control"  formControlName="tieuDe"
+                    [(ngModel)]="tinbaiByID.tieuDe">
+                <span class="text-danger" *ngIf="(FormControl['tieuDe'].touched || submitted)
+                && FormControl['tieuDe'].errors?.['required']">
                     This field must required
                 </span>
             </div>
+
             <div class="box col">
-                <label for="exampleFormControlInput1" class="form-label">Mã tin bài <span
+                <label for="exampleFormControlInput1" class="form-label">Chuyên mục<span
                         style="color:red">*</span></label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="matinbai"
-                    [(ngModel)]="tinbaiByID.matinbai">
-                <span class="text-danger" *ngIf="(FormControl['matinbai'].touched || submitted)
-                && FormControl['matinbai'].errors?.['required']">
-                    This field must required
-                </span>
+                <ng-multiselect-dropdown formControlName="chuyenMuc" [placeholder]="'custom placeholder'"
+                    [settings]="dropdownSettings" [data]="dropdownList" [(ngModel)]="selectedItems"
+                    (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                </ng-multiselect-dropdown>
             </div>
+
             <div class="box col">
-                <label for="exampleFormControlInput1" class="form-label">tin bài cha</label>
-                <select class="form-select">
-                    <option hidden selected>{{tinbaiByID.tinbaiCha}}</option>
-                    <option *ngFor="let item of tinbai">{{item.tentinbai}}</option>
-                </select>
+                <div>
+                    <label for="exampleFormControlInput1" class="form-label">URL ảnh thumbnail <span
+                            style="color:red">*</span></label>
+                    <input type="text" class="form-control"  formControlName="anh"
+                        [(ngModel)]="tinbaiByID.anh">
+                    <span class="text-danger" *ngIf="(FormControl['anh'].touched || submitted)
+                && FormControl['anh'].errors?.['required']">
+                        This field must required
+                    </span>
+                </div>
+                <div>
+                    <img src="{{this.FormControl['anh'].value}}" alt="Đường dẫn ảnh" class="img2">
+                </div>
             </div>
         </div>
         <div class="box row">
-            <label for="exampleFormControlTextarea1" class="form-label">Mô tả</label>
-            <textarea class="form-control" rows="9" formControlName="moTa"
-                [(ngModel)]="tinbaiByID.moTa"></textarea>
+            <label for="exampleFormControlTextarea1" class="form-label">Nội dung tin bài<span
+                    style="color:red">*</span></label>
+            <textarea class="form-control" rows="9" formControlName="noiDung"
+                [(ngModel)]="tinbaiByID.noiDung"></textarea>
 
         </div>
     </form>

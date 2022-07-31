@@ -37,7 +37,7 @@
             </div>
             <div class="box col">
                 <label for="exampleFormControlInput1" class="form-label">Chuyên mục cha</label>
-                <select type="email" class="form-control" id="exampleFormControlInput1" formControlName="chuyenMucCha">
+                <select class="form-select" formControlName="chuyenMucCha">
                     <option selected></option>
                     <option *ngFor="let item of chuyenMucCha">{{item.tenChuyenMuc}}</option>
 

@@ -22,11 +22,11 @@ export class ApiService {
     return this.http.get<any>("http://localhost:3003/posts")
     .pipe(map((res:any)=>res))
   }
-  deleteCategory(id:number){
+  deleteCategory(id:string){
     return this.http.delete<any>("http://localhost:3003/category/"+id)
     .pipe(map((res:any)=>res))
   }
-  deletePosts(id:number){
+  deletePosts(id:string){
     return this.http.delete<any>("http://localhost:3003/posts/"+id)
     .pipe(map((res:any)=>res))
   }

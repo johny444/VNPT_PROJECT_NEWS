@@ -10,19 +10,19 @@ import { INewPost } from 'src/app/share/interface/newpost';
 export class ViewArticleComponent implements OnInit {
 
   onPost: INewPost ={
-    id: 0,
+    id: "0",
     tieuDe: "",
     nguoiDang: "",
     ngayDang: "",
     luotXem: 0,
     chuyenMuc: [
       {
-        id: 0,
+        id: "0",
         tenChuyenMuc: "0",
         maChuyenMuc: "0"
       },
       {
-        id: 0,
+        id: "0",
         tenChuyenMuc: "0",
         maChuyenMuc: "0"
       }
@@ -55,7 +55,7 @@ export class ViewArticleComponent implements OnInit {
         this.searchPostData = res;
       })
   }
-  deletePostDetail(idPost: number) {
+  deletePostDetail(idPost: string) {
     this.api.deletePosts(idPost)
       .subscribe(res => {
         this.getPostDetail();
@@ -63,7 +63,6 @@ export class ViewArticleComponent implements OnInit {
   }
 
   searchh4() {
-    console.log(this.searchPost.tungayDang)
     let searchTen: any[] = [];
     let searchTuNgay: any[] = [];
     let searchDenNgay: any[] = [];
@@ -101,7 +100,5 @@ export class ViewArticleComponent implements OnInit {
     }
     return resultArr
   }
-  c(){
-    console.log(this.onPost);
-  }
+  
 }

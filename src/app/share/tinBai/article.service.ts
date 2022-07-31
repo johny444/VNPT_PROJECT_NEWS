@@ -14,27 +14,27 @@ export class ArticleService {
     }),
   };
   gettinbai() {
-    return this.http.get(this.apiURL + 'post')
+    return this.http.get(this.apiURL + '/posts')
   }
   gettinbaiById(id: any) {
-    return this.http.get(this.apiURL + 'post/' + id)
+    return this.http.get(this.apiURL + '/posts/' + id)
       .pipe(retry(1), catchError(this.handleError));
 
   }
   updatetinbai(id: any, tinbai: any) {
     return this.http.put(
-      this.apiURL + 'post/' + id,
+      this.apiURL + '/posts/' + id,
       tinbai
     )
       .pipe(retry(1), catchError(this.handleError));
 
   }
   createtinbai(tinbai:any){
-    return this.http.post<any>(this.apiURL+'post',tinbai)
+    return this.http.post<any>(this.apiURL+'/posts/',tinbai)
   }
 
   deletearticle(id:number){
-    return this.http.delete<any>(this.apiURL+"post/"+id)  
+    return this.http.delete<any>(this.apiURL+"/posts/"+id)  
   }
 
   handleError(error: any) {
