@@ -8,11 +8,11 @@
                 <div class="container1" style="text-align: center;" 
                 *ngFor="let item of newPostsData| paginate: { itemsPerPage: 5, currentPage: p }">
                     <div class="product-details">
-                        <a routerLink="/content">
+                        <a routerLink="/content" (click)="idContent(item.id)">
                             <h2>{{item.tieuDe}}</h2>
                         </a>
                         <div class="control">
-                            <button class="btn1" routerLink="/content">
+                            <button class="btn1" routerLink="/content" (click)="idContent(item.id)">
                                 <span class="price">Khóa</span>
                                 <span class="shopping-cart"><i class="fa fa-eye" aria-hidden="true"></i></span>
                                 <span class="buy">Xem bài viết</span>

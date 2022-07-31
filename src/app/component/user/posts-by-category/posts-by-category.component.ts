@@ -60,4 +60,7 @@ export class PostsByCategoryComponent implements OnInit {
   postByCategory(tenChuyenMuc:any){
     this.api.postByCategory.next(tenChuyenMuc);
   }
+  idContent(idContent: any) {
+    this.api.idContent.next(idContent);
+  }
 }

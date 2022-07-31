@@ -7,7 +7,7 @@
             <div>
                 <div class="container1" style="text-align: center;" *ngFor="let item of newPostsData">
                     <div class="product-details">
-                        <a routerLink="/content">
+                        <a routerLink="/content" (click)="idContent(item.id)">
                             <h2>{{item.tieuDe}}</h2>
                         </a>
                         <div class="control">

@@ -54,4 +54,8 @@ export class AuthorPostComponent implements OnInit {
   authorPost(nguoiDang:any){
     this.api.authorPost.next(nguoiDang);
   }
+
+  idContent(idContent: any) {
+    this.api.idContent.next(idContent);
+  }
 }

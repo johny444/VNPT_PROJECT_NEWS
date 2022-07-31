@@ -1,3 +1,4 @@
+import { AddArticleComponent } from './component/article/add-article/add-article.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewComponent } from './component/category/view/view.component';
 import { HomeComponent } from './component/user/home/home.component';
 import { RouterModule } from '@angular/router';
-import { ViewArticleComponent } from './component/article/viewArticle/viewArticle.component';
 import { AddComponent } from './component/category/add/add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthorPostComponent } from './component/user/author-post/author-post.component';
@@ -28,27 +28,39 @@ import { DetailComponent } from './component/category/detail/detail.component';
 import { ConfirmOTPComponent } from './component/signin/password/confirm-otp/confirm-otp.component';
 import { ForgetPWComponent } from './component/signin/password/forget-pw/forget-pw.component';
 import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
+import { ViewArticleComponent } from './component/article/view-article/view-article.component';
+import { ChangeArticleComponent } from './component/article/change-article/change-article.component';
+import { DetailArticleComponent } from './component/article/detail-article/detail-article.component';
+import { ChangeComponent } from './component/category/change/change.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     FooterComponent,
-    ViewComponent,
+    
     HomeComponent,
-    AddComponent,
     AuthorPostComponent,
     PostsByCategoryComponent,
     ContentComponent,
     AllPostComponent,
+
     LoginComponent,
     RegisterComponent,
     ResetpasswordComponent,
     AccountInformationComponent,
-    ViewArticleComponent,
-    DetailComponent,
     ConfirmOTPComponent,
-    ForgetPWComponent
+    ForgetPWComponent,
+
+    ViewComponent,
+    AddComponent,
+    DetailComponent,
+    ChangeComponent,
+
+    ViewArticleComponent,
+    AddArticleComponent,
+    ChangeArticleComponent,
+    DetailArticleComponent
   ],
   imports: [
     BrowserModule,
