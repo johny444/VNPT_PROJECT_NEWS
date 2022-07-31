@@ -18,16 +18,12 @@ import { PostsByCategoryComponent } from './component/user/posts-by-category/pos
 import { ContentComponent } from './component/user/content/content.component';
 import { AllPostComponent } from './component/user/all-post/all-post.component';
 
-
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { LoginComponent } from './component/signin/login/login.component';
 import { RegisterComponent } from './component/signin/register/register.component';
 import { ResetpasswordComponent } from './component/signin/password/resetpassword/resetpassword.component';
 import { AccountInformationComponent } from './component/signin/account-information/account-information.component';
-import { AddArticleComponent } from './component/article/add-article/add-article.component';
-import { ChangeArticleComponent } from './component/article/change-article/change-article.component';
-import { DetailArticleComponent } from './component/article/detail-article/detail-article.component';
-import { ChangeComponent } from './component/category/change/change.component';
+
 import { DetailComponent } from './component/category/detail/detail.component';
 import { ConfirmOTPComponent } from './component/signin/password/confirm-otp/confirm-otp.component';
 import { ForgetPWComponent } from './component/signin/password/forget-pw/forget-pw.component';
@@ -40,7 +36,6 @@ import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
     FooterComponent,
     ViewComponent,
     HomeComponent,
-    ViewArticleComponent,
     AddComponent,
     AuthorPostComponent,
     PostsByCategoryComponent,
@@ -51,10 +46,6 @@ import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
     ResetpasswordComponent,
     AccountInformationComponent,
     ViewArticleComponent,
-    AddArticleComponent,
-    ChangeArticleComponent,
-    DetailArticleComponent,
-    ChangeComponent,
     DetailComponent,
     ConfirmOTPComponent,
     ForgetPWComponent
@@ -65,7 +56,6 @@ import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
     NgMultiSelectDropDownModule.forRoot()
