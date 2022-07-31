@@ -8,7 +8,26 @@ import { FooterComponent } from './component/template/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewComponent } from './component/category/view/view.component';
+import { HomeComponent } from './component/user/home/home.component';
+import { RouterModule } from '@angular/router';
+import { ViewArticleComponent } from './component/article/viewArticle/viewArticle.component';
 import { AddComponent } from './component/category/add/add.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthorPostComponent } from './component/user/author-post/author-post.component';
+import { PostsByCategoryComponent } from './component/user/posts-by-category/posts-by-category.component';
+import { ContentComponent } from './component/user/content/content.component';
+import { AllPostComponent } from './component/user/all-post/all-post.component';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+import { LoginComponent } from './component/signin/login/login.component';
+import { RegisterComponent } from './component/signin/register/register.component';
+import { ResetpasswordComponent } from './component/signin/password/resetpassword/resetpassword.component';
+import { AccountInformationComponent } from './component/signin/account-information/account-information.component';
+
+import { DetailComponent } from './component/category/detail/detail.component';
+import { ConfirmOTPComponent } from './component/signin/password/confirm-otp/confirm-otp.component';
+import { ForgetPWComponent } from './component/signin/password/forget-pw/forget-pw.component';
+import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 
 @NgModule({
   declarations: [
@@ -16,14 +35,30 @@ import { AddComponent } from './component/category/add/add.component';
     NavComponent,
     FooterComponent,
     ViewComponent,
-    AddComponent
+    HomeComponent,
+    AddComponent,
+    AuthorPostComponent,
+    PostsByCategoryComponent,
+    ContentComponent,
+    AllPostComponent,
+    LoginComponent,
+    RegisterComponent,
+    ResetpasswordComponent,
+    AccountInformationComponent,
+    ViewArticleComponent,
+    DetailComponent,
+    ConfirmOTPComponent,
+    ForgetPWComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

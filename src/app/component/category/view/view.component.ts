@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ViewComponent implements OnInit {
 
   onCategory = {
-    id:0,
+    id: "0",
     tenChuyenMuc: "",
     maChuyenMuc: "",
     ngayKhoiTao: ""
@@ -24,6 +24,9 @@ export class ViewComponent implements OnInit {
 
   categoryData!: any;
   searchCategoryData!: any;
+
+  // page
+  p: number = 1;
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
@@ -36,43 +39,12 @@ export class ViewComponent implements OnInit {
         this.searchCategoryData = res;
       })
   }
-  deleteCategoryDetail(idCategory:number) {
+  deleteCategoryDetail(idCategory: string) {
     this.api.deleteCategory(idCategory)
       .subscribe(res => {
         this.getCategoryDetail();
       })
   }
-
-
-  // searchh() {
-  //   this.searchCategoryData = this.categoryData.filter((post: any) => {
-  //     if (this.searchCategory.tenChuyenMuc === '' ||
-  //       post.tenChuyenMuc.toLowerCase().includes(this.searchCategory.tenChuyenMuc.toLowerCase())) {
-  //       return post;
-  //     }
-  //     return null;
-  //   })
-  // }
-  // searchh2() {
-  //   this.searchCategoryData = this.categoryData.filter((post: any) => {
-  //     let date1 = new Date(post.ngayKhoiTao);
-  //     let date2 = new Date(this.searchCategory.tuNgayKhoiTao);
-  //     if (!Number.isFinite(date2.getTime()) || date1.getTime() > date2.getTime()) {
-  //       return post;
-  //     }
-  //     return null;
-  //   })
-  // }
-  // searchh3() {
-  //   this.searchCategoryData = this.categoryData.filter((post: any) => {
-  //     let date1 = new Date(post.ngayKhoiTao);
-  //     let date3 = new Date(this.searchCategory.denNgayKhoiTao);
-  //     if (!Number.isFinite(date3.getTime()) || date1.getTime() < date3.getTime()) {
-  //       return post;
-  //     }
-  //     return null;
-  //   })
-  // }
 
   searchh4() {
     console.log(this.searchCategory.tuNgayKhoiTao)
