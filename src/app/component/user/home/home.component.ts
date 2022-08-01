@@ -68,8 +68,8 @@ export class HomeComponent implements OnInit {
         a.chuyenMuc[0].tenChuyenMuc == this.randCategory.chuyenMuc[0].tenChuyenMuc
         )
         .slice(-3);
-        this.eyesPosts = this.postsData.sort((a: any, b: any) => a.luotXem - b.luotXem);
-        this.eyesPosts = this.eyesPosts.slice(-3);
+        this.eyesPosts = this.postsData.sort((a:any,b:any)=>b.luotXem-a.luotXem);
+        this.eyesPosts = this.eyesPosts.slice(0,3);
       })
   }
   authorPost(nguoiDang: any) {

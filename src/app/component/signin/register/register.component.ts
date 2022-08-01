@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
     this.submitted = true
     if (this.RegisterForm.valid) {
       this.service.Register(this.RegisterForm.value).subscribe(res => {
-        alert('REGISTER SUCCESSFUL');
+        alert('Đăng ký thành côngL');
         this.RegisterForm.reset()
         this.router.navigate(["login"])
 

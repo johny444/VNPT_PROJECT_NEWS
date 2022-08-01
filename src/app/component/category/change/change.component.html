@@ -39,7 +39,7 @@
             </div>
             <div class="box col">
                 <label for="exampleFormControlInput1" class="form-label">Chuyên mục cha</label>
-                <select class="form-select">
+                <select class="form-select" formControlName="chuyenMucCha">
                     <option hidden selected>{{chuyenmucByID.chuyenMucCha}}</option>
                     <option *ngFor="let item of chuyenmuc">{{item.tenChuyenMuc}}</option>
                 </select>
@@ -47,7 +47,7 @@
         </div>
         <div class="row box">
             <label for="exampleFormControlTextarea1" class="form-label">Mô tả</label>
-            <textarea class="form-control" rows="9" formControlName="moTa"
+            <textarea class="form-control" rows="12" formControlName="moTa"
                 [(ngModel)]="chuyenmucByID.moTa"></textarea>
         </div>
     </form>

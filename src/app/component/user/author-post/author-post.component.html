@@ -1,5 +1,5 @@
 <div class="container d-flex">
-    <div>
+    <div style="width: 70vw;">
         <div class="mb-5 mt-5">
             <div>
                 <h2><strong>Bài viết của tác giả: {{authorName}}</strong></h2>
@@ -40,7 +40,8 @@
                                 </li>
                                 <li><i class="fa fa-tags" aria-hidden="true"></i>
                                     <strong>&ensp;Chuyên mục: </strong>
-                                    <a href="{{i.tenChuyenMuc}}" *ngFor="let i of item.chuyenMuc">   
+                                    <a (click)="postByCategory(i.tenChuyenMuc)" href="{{i.tenChuyenMuc}}"
+                                        *ngFor="let i of item.chuyenMuc" routerLink="/postsbycategory">
                                         {{i.tenChuyenMuc}}
                                         <br>
                                     </a>

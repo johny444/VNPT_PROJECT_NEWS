@@ -54,7 +54,7 @@ export class AccountInformationComponent implements OnInit {
     this.accounter.email = this.accounterFormControl['email'].value;
     if (this.accounterForm.valid) {
       this.service.putUser(this.accounter,this.accounter.id).subscribe(res => {
-        alert('CHANGE EMAIL SUCCESSFUL');
+        alert('Thay đổi email thành công');
         this.accounterForm.reset()
         this.router.navigate(["category"])
       }

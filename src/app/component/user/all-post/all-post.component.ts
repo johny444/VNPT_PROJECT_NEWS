@@ -72,8 +72,8 @@ export class AllPostComponent implements OnInit {
         this.randCategory = this.postsData[Math.floor(Math.random() * this.postsData.length)];
         this.postsFromCategory = this.postsData.filter(
           (a: any) => a.chuyenMuc[0].tenChuyenMuc == this.randCategory.chuyenMuc[0].tenChuyenMuc).slice(-3);
-        this.eyesPosts = this.postsData.sort((a: any, b: any) => a.luotXem - b.luotXem);
-        this.eyesPosts = this.eyesPosts.slice(-3);
+        this.eyesPosts = this.postsData.sort((a:any,b:any)=>b.luotXem-a.luotXem);
+        this.eyesPosts = this.eyesPosts.slice(0,3);
       })
   }
   authorPost(nguoiDang: any) {

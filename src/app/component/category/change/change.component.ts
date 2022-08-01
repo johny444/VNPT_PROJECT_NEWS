@@ -12,59 +12,66 @@ export class ChangeComponent implements OnInit {
 
   form!: FormGroup
   submitted = false;
-  chuyenmucByID:any={}
+  chuyenmucByID: any = {}
 
-  chuyenmuc!:any
+  chuyenmuc!: any
   id = this.actRoute.snapshot.params['id'];
-  constructor(private fb: FormBuilder,private api:NewsService,
-     public actRoute: ActivatedRoute,private router:Router) { }
+  constructor(private fb: FormBuilder, private api: NewsService,
+    public actRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      tenChuyenMuc:["",
+      tenChuyenMuc: ["",
         Validators.compose([
           Validators.required,
         ])
       ],
-      maChuyenMuc:['',
+      maChuyenMuc: ['',
         Validators.compose([
           Validators.required
         ])
-    
-      ],
-      ngayKhoiTao:[''],
-      moTa:[''],
 
-   })
+      ],
+      ngayKhoiTao: [''],
+      moTa: [''],
+      chuyenMucCha: ['']
+
+    })
     this.getCMByID()
     this.getCM()
   }
-  onSubmit():void{
-    
+  onSubmit(): void {
+
 
   }
-  get FormControl(){
+  get FormControl() {
     return this.form.controls
   }
-  getCMByID(){
-      this.api.getChuyenmucById(this.id).subscribe((data:{})=>{
-        this.chuyenmucByID=data
-        console.log(this.chuyenmucByID)
-      })
-  }
-  getCM(){
-    this.api.getChuyenmuc().subscribe(res=>{
-      this.chuyenmuc=res
+  getCMByID() {
+    this.api.getChuyenmucById(this.id).subscribe((data: {}) => {
+      this.chuyenmucByID = data
     })
   }
-  UpdateCM(){
-      this.api.updateChuyenmuc(this.id,this.form.value).subscribe(res=>{
-        alert("Cập Nhật Thành Công")
-        this.router.navigate(['/category'])
+  getCM() {
+    this.api.getChuyenmuc().subscribe(res => {
+      this.chuyenmuc = res
+    })
+  }
+  UpdateCM() {
+    var today = new Date();
+    this.chuyenmucByID.ngayKhoiTao = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+    this.chuyenmucByID.chuyenMucCha = this.FormControl['chuyenMucCha'].value;
+    this.chuyenmucByID.tenChuyenMuc = this.FormControl['tenChuyenMuc'].value;
+    this.chuyenmucByID.maChuyenMuc = this.FormControl['maChuyenMuc'].value;
+    this.chuyenmucByID.moTa = this.FormControl['moTa'].value;
 
-      }
-      )
-    
+    this.api.updateChuyenmuc(this.id, this.chuyenmucByID).subscribe(res => {
+      alert("Cập Nhật Thành Công")
+      this.router.navigate(['/category'])
+
+    }
+    )
+
   }
 
 }

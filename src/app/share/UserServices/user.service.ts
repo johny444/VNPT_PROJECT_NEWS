@@ -37,7 +37,7 @@ export class UserService {
         return a.username === USER.username && a.password === USER.password
       })
       if (user) {
-        alert('Login Successful')
+        alert('Đăng nhập thành công')
         this._accounter.next(user)
         localStorage.setItem("account", JSON.stringify(user))
         // console.log("asdasd", localStorage.getItem("account"))
@@ -48,7 +48,7 @@ export class UserService {
 
         return;
       } else {
-        alert("user not found or Incorrect password")
+        alert("Tên đăng nhập hoặc mật khẩu chưa đúng")
       }
     })
 

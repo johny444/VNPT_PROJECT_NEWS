@@ -48,9 +48,6 @@ export class NavComponent implements OnInit {
     })
 
   }
-  Checklogin() {
-    // this.Check.loggedIn.next(false)
-  }
   Checklogout() {
     if (window.confirm("Bạn có chắc chắn muốn đăng xuất khỏi hệ thống?")) {
 

@@ -79,8 +79,8 @@ export class ContentComponent implements OnInit {
         this.randCategory = this.postsData[Math.floor(Math.random() * this.postsData.length)];
         this.postsFromCategory = this.postsData.filter(
           (a: any) => a.chuyenMuc[0].tenChuyenMuc == this.randCategory.chuyenMuc[0].tenChuyenMuc).slice(-3);
-        this.eyesPosts = this.postsData.sort((a: any, b: any) => a.luotXem - b.luotXem);
-        this.eyesPosts = this.eyesPosts.slice(-3);
+        this.eyesPosts = this.postsData.sort((a:any,b:any)=>b.luotXem-a.luotXem);
+        this.eyesPosts = this.eyesPosts.slice(0,3);
         
       })
   }
@@ -90,5 +90,7 @@ export class ContentComponent implements OnInit {
   postByCategory(tenChuyenMuc: any) {
     this.api.postByCategory.next(tenChuyenMuc);
   }
-
+  idContent(idContent: any) {
+    this.api.idContent.next(idContent);
+  }
 }

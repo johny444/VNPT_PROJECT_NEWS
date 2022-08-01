@@ -1,5 +1,5 @@
 <div class="container d-flex">
-    <div>
+    <div style="width: 70vw;">
         <div class="mb-5 mt-5">
             <div>
                 <h2> <strong>Bài viết mới nhất</strong> </h2>
@@ -7,11 +7,11 @@
             <div>
                 <div class="container1" style="text-align: center;" *ngFor="let item of newPostsData">
                     <div class="product-details">
-                        <a routerLink="/content" (click)="idContent(item.id)">
+                        <a routerLink="/content"  (click)="idContent(item.id)">
                             <h2>{{item.tieuDe}}</h2>
                         </a>
                         <div class="control">
-                            <button class="btn1" routerLink="/content" (click)="idContent(item.id)">
+                            <button class="btn1" routerLink="/content"  (click)="idContent(item.id)">
                                 <span class="price">Khóa</span>
                                 <span class="shopping-cart"><i class="fa fa-eye" aria-hidden="true"></i></span>
                                 <span class="buy">Xem bài viết</span>
@@ -61,12 +61,12 @@
             <div>
                 <div class="container1" style="text-align: center;" *ngFor="let item of postsFromCategory">
                     <div class="product-details">
-                        <a routerLink="/content">
+                        <a routerLink="/content" (click)="idContent(item.id)">
                             <h2>{{item.tieuDe}}</h2>
                         </a>
 
                         <div class="control" >
-                            <button class="btn1" routerLink="/content">
+                            <button class="btn1" routerLink="/content" (click)="idContent(item.id)">
                                 <span class="price">Khóa</span>
                                 <span class="shopping-cart"><i class="fa fa-eye" aria-hidden="true"></i></span>
                                 <span class="buy">Xem bài viết</span>
@@ -118,7 +118,7 @@
             </div>
             <div class="container1" style="width: 300px; height: 150px;" *ngFor="let item of eyesPosts">
 
-                <a routerLink="/content">
+                <a routerLink="/content" (click)="idContent(item.id)">
                     <div class="product-image" style="width: 100%;text-align: center;">
                         <div class="product-details" style="padding: 0px;width:60%;display: inline-block;">
                             <h2>{{item.tieuDe}}</h2>

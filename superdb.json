@@ -8,8 +8,8 @@
     },
     {
       "username": "johny22",
-      "email": "johny22@gmail.com",
-      "password": "johny44QWE!@#",
+      "email": "johny222@gmail.com",
+      "password": "johny22QWE!@#",
       "id": "4"
     },
     {
@@ -23,6 +23,20 @@
       "email": "johny22@gmail.com",
       "password": "johny44QWE!@#",
       "id": "6"
+    },
+    {
+      "username": "john55",
+      "email": "johny55@gmail.com",
+      "password": "johny55QWE!@#",
+      "confirmpassword": "johny55QWE!@#",
+      "id": "6jtydZ7"
+    },
+    {
+      "username": "john66",
+      "email": "johny66@gmail.com",
+      "password": "johny66QWE!@#",
+      "confirmpassword": "johny66QWE!@#",
+      "id": "S1fnr6a"
     }
   ],
   "posts": [
@@ -228,12 +242,12 @@
   ],
   "category": [
     {
-      "id": "1",
-      "tenChuyenMuc": "Sub-Ex",
+      "tenChuyenMuc": "Sub-Exxxx2",
       "maChuyenMuc": "55-165-6071",
-      "ngayKhoiTao": "2021-10-23",
-      "chuyenMucCha": "Toughjoyfax",
-      "moTa": "1"
+      "ngayKhoiTao": "1/8/2022",
+      "moTa": "112312312",
+      "id": "1",
+      "chuyenMucCha": "Fixflex"
     },
     {
       "id": "2",

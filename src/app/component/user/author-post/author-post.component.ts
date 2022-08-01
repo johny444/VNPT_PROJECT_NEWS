@@ -39,8 +39,8 @@ export class AuthorPostComponent implements OnInit {
       .subscribe(res => {
         this.postsData = res;
         this.newPostsData = this.postsData.filter((a:any)=>a.nguoiDang == this.authorName)
-        this.eyesPosts = this.postsData.sort((a:any,b:any)=>a.luotXem-b.luotXem);
-        this.eyesPosts = this.eyesPosts.slice(-3);
+        this.eyesPosts = this.postsData.sort((a:any,b:any)=>b.luotXem-a.luotXem);
+        this.eyesPosts = this.eyesPosts.slice(0,3);
       })
     
   }
@@ -54,7 +54,9 @@ export class AuthorPostComponent implements OnInit {
   authorPost(nguoiDang:any){
     this.api.authorPost.next(nguoiDang);
   }
-
+  postByCategory(tenChuyenMuc: any) {
+    this.api.postByCategory.next(tenChuyenMuc);
+  }
   idContent(idContent: any) {
     this.api.idContent.next(idContent);
   }

@@ -23,19 +23,19 @@
 
         </ul>
     </div>
-    <button *ngIf="!_dropdown" class="btn btn-outline-success mx-2" type="submit" routerLink="/login"
-        (click)="Checklogin()">Login</button>
+    <button *ngIf="islogin" class="btn btn-outline-success mx-2" type="submit" routerLink="/login">Đăng nhập</button>
 
+    <!-- newww -->
     <i *ngIf="_dropdown" class="bi bi-person-circle" style='font-size:36px'></i>
     <span> </span>
-    <!-- newww -->
     <div class="btn-group" *ngIf="_dropdown">
         <button type="button" class="btn btn-outline dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             {{accounter.username}}
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
-            <li><button class="dropdown-item" type="button" routerLink="/accountinformation">Manange Account</button></li>
-            <li><button class="dropdown-item" type="button" (click)="Checklogout()" >Logout</button></li>
+            <li><button class="dropdown-item" type="button" routerLink="/accountinformation">Thông tin tài khoản</button>
+            </li>
+            <li><button class="dropdown-item" type="button" (click)="Checklogout()">Đăng xuất</button></li>
         </ul>
     </div>
 </nav>

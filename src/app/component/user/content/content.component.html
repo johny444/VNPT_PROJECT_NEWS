@@ -1,5 +1,5 @@
 <div class="container d-flex">
-    <div>
+    <div style="width: 70vw;">
         <div class="mb-5 mt-5" style="width: 750px;">
             <div>
                 <h2> <strong>{{conten.tieuDe}}</strong> </h2>
@@ -48,7 +48,7 @@
             </div>
             <div class="container1" style="width: 300px; height: 150px;" *ngFor="let item of eyesPosts">
 
-                <a routerLink="/content">
+                <a routerLink="/content" (click)="idContent(item.id)">
                     <div class="product-image" style="width: 100%;text-align: center;">
                         <div class="product-details" style="padding: 0px;width:60%;display: inline-block;">
                             <h2>{{item.tieuDe}}</h2>

@@ -47,8 +47,8 @@ export class PostsByCategoryComponent implements OnInit {
         });
         this.category = [...new Set(this.test2.map((a:any)=>a.tenChuyenMuc))];
         this.newPostsData = this.postsData.filter((a:any)=>a.chuyenMuc[0].tenChuyenMuc == this.categoryName)
-        this.eyesPosts = this.postsData.sort((a:any,b:any)=>a.luotXem-b.luotXem);
-        this.eyesPosts = this.eyesPosts.slice(-3);
+        this.eyesPosts = this.postsData.sort((a:any,b:any)=>b.luotXem-a.luotXem);
+        this.eyesPosts = this.eyesPosts.slice(0,3);
       })
     
   }
